@@ -3,9 +3,9 @@
 ### TODO
 
 #### Framework:
-[ ] NvChad?
+ * NvChad?
 
 #### Plugins
-[ ] PHP & Javascript good support
-[ ] Error reporting
+ * PHP & Javascript good support
+ * Error reporting
 
