@@ -44,7 +44,7 @@
 - [ ] powerline like bar, equivalentinvim vim-airline, NvChad has it?
 - [ ] location push-pop feature, better if includes visual marks, equivalentinvim vim-kangaroo
 - [ ] Show what is going to be replaced with %s/foo/bar while typing, equivalentinvim vim-over
-- [ ] Visualize HEX colors and names, equivalentinvim vim-coloresque
+- [X] Visualize HEX colors and names, equivalentinvim vim-coloresque - included in NvChad
 - [ ] Markdown and Asciidoc support (syntax, syntax checker, etc), also a previewer:
 - [ ] Preview (render) of things like markwon, equivalentinvim vim-preview
 - [ ] Show shitty M$ buggy newlines
