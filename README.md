@@ -1,8 +1,8 @@
 # neovim-conf
 
 ### TODO
- * F1-F7 should be the same as how elive-vim config is, switch between :buffer and show line.
- *  
+- [ ] F1-F7 should be the same as how elive-vim config is, switch between :buffer and show line.
+- [ ]  
 #### Framework:
 - [ ] NvChad?
 - [ ] Lazy? https://youtu.be/2ahI8lYUYgw?t=199
