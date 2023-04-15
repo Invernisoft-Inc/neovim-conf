@@ -23,6 +23,10 @@
 * Install Nerdfonts for many symbols https://www.nerdfonts.com/
     * _Already included in Elive_
 
+### Howtos:
+
+* Small introduction to Neovim + NvChad: https://www.youtube.com/watch?v=Mtgo-nP_r8Y
+
 
 ### Tips
 
