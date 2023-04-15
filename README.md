@@ -25,6 +25,7 @@
 
 ### Howtos:
 
+* NvChad docs: https://nvchad.com/docs/quickstart/install
 * Small introduction to Neovim + NvChad: https://www.youtube.com/watch?v=Mtgo-nP_r8Y
 
 
