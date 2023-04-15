@@ -12,7 +12,8 @@
 - [ ] Snippets:
    - [ ] comp-nvim-lsp : https://youtu.be/h4g0m0Iwmys?t=256
    - equivalentinvim: ultisnips, with own snippets for codes and mapping of locations with predefined values
-- [ ] Copilot
+- [ ] Copilot.~~vim~~lua
+- [ ] Copilot cmp: https://github.com/zbirenbaum/copilot-cmp
 - [ ] Execute-on-save: this is a pretty need thing, research a plugin that triggers a user specified action when its saved
     * equivalentinvim vim-dispatch runs them in BG
 - [ ] Autocomplete: equivalentinvim: supertab, neocomplcache, youcompleteme
@@ -87,3 +88,15 @@
 ### Tips
 
 Want to select a font for your programming environment? See this online checker: https://www.programmingfonts.org/
+
+
+### Instructions
+
+#### Copilot install
+
+Suggestion: before to set up your neovim, remove/move its possible conf and creating a new one install the copilot plugin, this will create the file:
+
+> .config/github-copilot/hosts.json
+
+Which is the only thing you need, later, you can remove this conf and set up your new neovim setup
+
