@@ -13,5 +13,6 @@
  * Snippets:
     * comp-nvim-lsp : https://youtu.be/h4g0m0Iwmys?t=256
  * Copilot
+ * Execute-on-save: this is a pretty need thing, research a plugin that triggers a user specified action when its saved
 
 
