@@ -188,6 +188,7 @@ main(){
     echo -e ""
     el_info "First, make sure that you have these dependencies installed before to continue:"
     echo -e " * NeoVim in version at least 0.8.3"
+    echo -e " * Nodejs (npm) in verstion at least 16.x"
     echo -e " * Nerd Fonts of your choice installed and set in your Terminal (suggestion: 'JetbrainsMono Nerd Font', version NOT ending in 'Mono') - https://www.nerdfonts.com/"
     echo -e " * RipGrep tool"
     echo -e " * GCC compiler"
