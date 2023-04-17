@@ -236,6 +236,8 @@ main(){
         fi
     fi
 
+    # TODO: install elivim in /usr/local/bin/
+
 
     set -x
 

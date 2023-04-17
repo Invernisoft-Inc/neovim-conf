@@ -1,0 +1,66 @@
+#!/bin/bash
+#source /usr/lib/elive-tools/functions
+# elive functions {{{
+el_confirm(){
+    # pre {{{
+    local reply question flag_glob
+
+    question="$1"
+
+    # }}}
+    # return answer {{{
+
+    echo -en "\n$question [y/n]: "
+    if [[ -n "$ZSH_VERSION" ]] ; then
+        read reply
+    else
+        read -e reply
+    fi
+
+    case "$reply" in
+        y|Y|Yes|YES|s|S)
+            return  0
+            ;;
+        n|N|no|NO|nope)
+            return  1
+            ;;
+        *)
+            # repeat question until confirmation
+            if el_confirm "${el_c_b2}${@}${el_c_n}" ; then
+                return 0
+            else
+                return 1
+            fi
+            ;;
+    esac
+
+    # }}}
+}
+# - elive functions }}}
+
+main(){
+    set -e
+    branch="main"
+
+    cd ~/.config/nvim
+
+    echo -en "Updating..."
+    command git fetch -q origin ${branch}
+    echo -e "Updated       "
+
+    if [[ "$( cat .git/refs/remotes/origin/${branch} )" != "$( cat .git/HEAD )" ]] ; then
+        echo "updates available"
+        if el_confirm "Do you want to include updates?" ; then
+            echo yes
+        fi
+    fi
+
+    nvim "$@"
+}
+
+#
+#  MAIN
+#
+main "$@"
+
+# vim: set foldmethod=marker :
