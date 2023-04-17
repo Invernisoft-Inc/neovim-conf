@@ -156,7 +156,9 @@ exit_error(){
     exit 1
 }
 exit_ok(){
-    if [[ "$?" = 0 ]] ; then
+    signal="$?"
+    set +x
+    if [[ "$signal" = 0 ]] ; then
         echo -e "${el_c_g}${el_c_blink}Help Elive to continue making amazing things with a grateful donation! - https://www.elivecd.org/donate/${el_c_n}"
     fi
 }
@@ -195,6 +197,14 @@ main(){
     echo -e ""
 
     if ! el_confirm "Finish to prepare your system before to proceed with the next step - Continue now?" ; then
+        exit 1
+    fi
+
+    if [[ -e ~/.config/nvim ]] || [[ -e ~/.local/share/nvim ]] ; then
+        el_error "Existing Nvim configuration found, you must remove first before to continue:"
+        echo "rm -rf ~/.config/nvim"
+        echo "rm -rf ~/.local/share/nvim"
+        echo
         exit 1
     fi
 
