@@ -100,18 +100,11 @@
 - [ ] Include other selections?
 
 
-### Verify bugs:
+### Bugs (possible) to check:
 - [ ] fonts compatibility? over terminology, urxvt, ssh, tmux, etc
 - [ ] syntax working for special files: c (improved, equivalentinvim vim-syntax-extra), edc, markdown, asciidoc
 - [ ] Showing tabs can be annoying especially when copying the text, check vimrc conf to compare
 
-
-### Suggestions:
-
-* Install the Jetbrains featured fonts https://www.jetbrains.com/lp/mono/
-    * _Already included in Elive_
-* Install Nerdfonts for many symbols https://www.nerdfonts.com/
-    * _Already included in Elive_
 
 ### Howtos:
 
@@ -119,19 +112,4 @@
 * NvChad docs: https://nvchad.com/docs/quickstart/install
 * NeoVim from Scratch (a guided tutorial of NeoVim customization and plugins): https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ
 
-
-### Tips
-
-Want to select a font for your programming environment? See this online checker: https://www.programmingfonts.org/
-
-
-### Instructions
-
-#### Copilot install
-
-Suggestion: before to set up your neovim, remove/move its possible conf and creating a new one install the copilot plugin, this will create the file:
-
-> .config/github-copilot/hosts.json
-
-Which is the only thing you need, later, you can remove this conf and set up your new neovim setup
 
