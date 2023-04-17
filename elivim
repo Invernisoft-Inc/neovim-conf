@@ -50,8 +50,10 @@ main(){
 
     if [[ "$( cat .git/refs/remotes/origin/${branch} )" != "$( cat .git/HEAD )" ]] ; then
         echo "updates available"
+        command git log -q --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold yellow)%an%C(reset)%n''          %C(bold white)%s%C(reset) %C(white)%b%C(reset)' HEAD...refs/remotes/origin/${branch}
         if el_confirm "Do you want to include updates?" ; then
-            echo yes
+
+            echo -e "Please restart NeoVim"
         fi
     fi
 

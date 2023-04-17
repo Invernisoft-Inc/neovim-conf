@@ -1,5 +1,8 @@
 # neovim-conf
 
+[![Thanatermesis's GitHub stats](https://github-readme-stats.vercel.app/api?username=Thanatermesis&count_private=true&show_icons=true&theme=tokyonight&range=all_time)](https://github.com/anuraghazra/github-readme-stats)
+
+
 ## How to Use it
 ### Notes:
 * "space" is the "leader key" on this configuration, in other vim configuration was commonly "," or other ones
