@@ -200,13 +200,39 @@ main(){
         exit 1
     fi
 
-    if [[ -e ~/.config/nvim ]] || [[ -e ~/.local/share/nvim ]] ; then
+    if [[ -e ~/.config/nvim ]] || [[ -e ~/.local/share/nvim ]] || [[ -e ~/.cache/nvim ]] ; then
         el_error "Existing Nvim configuration found, you must remove first before to continue:"
         echo "rm -rf ~/.config/nvim"
         echo "rm -rf ~/.local/share/nvim"
+        echo "rm -rf ~/.cache/nvim"
         echo
         exit 1
     fi
+
+    if el_confirm "Do you want to use Copilot?" ; then
+        is_copilot_wanted=1
+        if ! [[ -e "$HOME/.config/github-copilot/hosts.json" ]] ; then
+            el_warning "Copilot is not yet configured"
+            el_info "How to configure Copilot:"
+            echo
+            echo -e " 1. delete your nvim directories to create a new conf (backup if needed):"
+            echo "rm -rf ~/.config/nvim"
+            echo "rm -rf ~/.local/share/nvim"
+            echo "rm -rf ~/.cache/nvim"
+            echo
+            echo -e " 2. get the official Copilot plugin:"
+            echo -e "git clone https://github.com/github/copilot.vim.git  ~/.config/nvim/pack/github/start/copilot.vim"
+            echo
+            echo -e " 3. run 'nvim' and run:  :Copilot setup"
+            echo
+            echo -e " 4. delete again your NeoVim directories in order to continue with our install"
+            echo
+            if ! el_confirm "Ready to continue?" ; then
+                exit 1
+            fi
+        fi
+    fi
+
 
     set -x
 
