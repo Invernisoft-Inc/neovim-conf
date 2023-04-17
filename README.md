@@ -1,5 +1,34 @@
 # neovim-conf
 
+## How to Use it
+### Notes:
+* "space" is the "leader key" on this configuration, in other vim configuration was commonly "," or other ones
+ 
+### Usage
+* Ctrl + n to open the file explorer, open files, copy/move/rename/etc functions
+* Alt + h|v|i : open a terminal horizontal|vertical|inside
+* Space : this is the "leader" key, wait one second to show you configured triggers
+* Space + t + h : select a theme
+* Space + c + h : cheatsheet
+* Space + c + m : git commits, switch to specific checkouts in realtime
+* Space + f + a : find files with browser and previewer
+* Space + f + o : find old (history) edited files
+* Space + f + w : grep in your files with live previewer
+* Space + f + b|z : find in current file | opened files
+* Space + q : diagnostics in your code
+* Space + 
+* Space + 
+* Space + 
+* Space + 
+* Space + 
+* Space + 
+* Space + 
+
+
+------
+
+
+
 #### Framework:
 - [ ] NvChad?
 - [ ] Lazy? https://youtu.be/2ahI8lYUYgw?t=199
@@ -52,10 +81,15 @@
 - [ ] Show and fix whitespacing errors
 - [ ] Feature to "sudo save" file when no permissions
 - [ ] Show the cursor cuc & cul when switching windows
+- [ ] EFL full support & EDC
+
+### Ideas
+* Trouble - A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing. - https://github.com/folke/trouble.nvim
 
 
 ### Hotkeys
-- [ ] F1-F7 should be the same as how elive-vim config is, switch between :buffer and show line.
+- [X] F1-F7 should be the same as how elive-vim config is, switch between :buffer and show line.
+    * replaced by Tab and Shift-Tab which is much more friendly and uses less keys
 - [ ] F12: pastetoggle
 - [ ] hotkeys to tabularize based in symbols like (, =, etc
 - [ ] Ctrl+s to save, Ctrl+q to quit?
@@ -81,8 +115,9 @@
 
 ### Howtos:
 
+* NvChad Introduction: https://youtu.be/Mtgo-nP_r8Y
 * NvChad docs: https://nvchad.com/docs/quickstart/install
-* Small introduction to Neovim + NvChad: https://www.youtube.com/watch?v=Mtgo-nP_r8Y
+* NeoVim from Scratch (a guided tutorial of NeoVim customization and plugins): https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ
 
 
 ### Tips

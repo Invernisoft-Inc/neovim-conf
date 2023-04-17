@@ -227,6 +227,8 @@ main(){
             echo
             echo -e " 4. delete again your NeoVim directories in order to continue with our install"
             echo
+            echo -e " x. alternatively to all previous steps, you can simply import the dir ~/.config/github-copilot/ to your machine"
+            echo
             if ! el_confirm "Ready to continue?" ; then
                 exit 1
             fi
