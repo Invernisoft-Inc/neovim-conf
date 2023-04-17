@@ -1,7 +1,6 @@
 #!/bin/bash
 SOURCE="install-elivim.sh"
 source /usr/lib/elive-tools/functions 1>/dev/null 2>&1 || true
-set -x
 
 # NEVER set -e, so traps are ignored!
 #set -e
@@ -183,6 +182,23 @@ main(){
     local var
 
     # }}}
+
+    echo -e ""
+    el_info "First, make sure that you have these dependencies installed before to continue:"
+    echo -e " * NeoVim in version at least 0.8.3"
+    echo -e " * Nerd Fonts of your choice installed and set in your Terminal (suggestion: 'JetbrainsMono Nerd Font', version NOT ending in 'Mono') - https://www.nerdfonts.com/"
+    echo -e " * RipGrep tool"
+    echo -e " * GCC compiler"
+
+    echo -e ""
+    echo -e "Note: If you are unable to install NeoVim in a good version on your OS, you can use this very good option to install it:  https://forum.elivelinux.org/t/how-to-install-nix-packages-on-debian-based-systems/3422"
+    echo -e ""
+
+    if ! el_confirm "Finish to prepare your system before to proceed with the next step - Continue now?" ; then
+        exit 1
+    fi
+
+    set -x
 
 }
 
