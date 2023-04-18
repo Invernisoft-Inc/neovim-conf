@@ -302,7 +302,7 @@ main(){
 
     echo -en "Updating..."
     command git fetch -q origin ${branch}
-    echo -e "Updated       "
+    echo -e "\"Updated       "
 
     #if [[ "$( cat .git/refs/remotes/origin/${branch} )" != "$( cat .git/HEAD )" ]] ; then
     if [[ "$( cat .git/refs/heads/${branch} )" != "$( cat .git/FETCH_HEAD | awk '{print $1}' )" ]] ; then
@@ -310,7 +310,7 @@ main(){
         command git log -q --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold yellow)%an%C(reset)%n''          %C(bold white)%s%C(reset) %C(white)%b%C(reset)' HEAD...refs/remotes/origin/${branch}
 
         # pause seconds to read
-        for i in $(seq 3) ; do echo -ne "Pause ($i/3)" ; sleep 1 ; done ; echo "              "
+        for i in $(seq 3) ; do echo -ne "\rPause ($i/3)" ; sleep 1 ; done ; echo -e "\r              "
 
         if el_confirm "Do you want to include updates?" ; then
 
