@@ -288,7 +288,7 @@ main(){
     echo -e "Updated       "
 
     #if [[ "$( cat .git/refs/remotes/origin/${branch} )" != "$( cat .git/HEAD )" ]] ; then
-    if [[ "$( cat .git/refs/head/${branch} )" != "$( cat .git/FETCH_HEAD | awk '{print $1}' )" ]] ; then
+    if [[ "$( cat .git/refs/heads/${branch} )" != "$( cat .git/FETCH_HEAD | awk '{print $1}' )" ]] ; then
         echo "updates available"
         command git log -q --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold yellow)%an%C(reset)%n''          %C(bold white)%s%C(reset) %C(white)%b%C(reset)' HEAD...refs/remotes/origin/${branch}
 
