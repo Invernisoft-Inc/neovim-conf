@@ -254,10 +254,10 @@ recreate_new_conf(){
         setup_instructions
     fi
 
-    git clone -b "$branch" https://github.com/Invernisoft-Inc/NvChad ~/.config/nvim --depth 1
+    git clone -q -b "$branch" https://github.com/Invernisoft-Inc/NvChad ~/.config/nvim --depth 1
 
-    mkdir -p ~/.config/nvim/custom/bin/elivim
-    cp "$0" ~/.config/nvim/custom/bin/elivim
+    mkdir -p ~/.config/nvim/custom/bin
+    cp "$0" ~/.config/nvim/custom/bin/
 
     case "$SHELL" in
         *"zsh")
