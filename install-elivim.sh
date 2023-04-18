@@ -150,6 +150,8 @@ fi
 exit_error(){
     set +x
 
+    echo -e "E: aborted..." 1>&2
+
     # mark a failed step
     echo $$ > "/tmp/.${SOURCE}.failed"
 
@@ -184,59 +186,6 @@ main(){
     local var
 
     # }}}
-
-    echo -e ""
-    el_info "First, make sure that you have these dependencies installed before to continue:"
-    echo -e " * NeoVim in version at least 0.8.3"
-    echo -e " * Nodejs (npm) in verstion at least 16.x"
-    echo -e " * Nerd Fonts of your choice installed and set in your Terminal (suggestion: 'JetbrainsMono Nerd Font', version NOT ending in 'Mono') - https://www.nerdfonts.com/"
-    echo -e " * RipGrep tool"
-    echo -e " * GCC compiler"
-
-    echo -e ""
-    echo -e "Note: If you are unable to install NeoVim in a good version on your OS, you can use this very good option to install it:  https://forum.elivelinux.org/t/how-to-install-nix-packages-on-debian-based-systems/3422"
-    echo -e ""
-
-    if ! el_confirm "Finish to prepare your system before to proceed with the next step - Continue now?" ; then
-        exit 1
-    fi
-
-    if [[ -e ~/.config/nvim ]] || [[ -e ~/.local/share/nvim ]] || [[ -e ~/.cache/nvim ]] ; then
-        el_error "Existing Nvim configuration found, you must remove first before to continue:"
-        echo "rm -rf ~/.config/nvim"
-        echo "rm -rf ~/.local/share/nvim"
-        echo "rm -rf ~/.cache/nvim"
-        echo
-        exit 1
-    fi
-
-    if el_confirm "Do you want to use Copilot?" ; then
-        is_copilot_wanted=1
-        if ! [[ -e "$HOME/.config/github-copilot/hosts.json" ]] ; then
-            el_warning "Copilot is not yet configured"
-            el_info "How to configure Copilot:"
-            echo
-            echo -e " 1. delete your nvim directories to create a new conf (backup if needed):"
-            echo "rm -rf ~/.config/nvim"
-            echo "rm -rf ~/.local/share/nvim"
-            echo "rm -rf ~/.cache/nvim"
-            echo
-            echo -e " 2. get the official Copilot plugin:"
-            echo -e "git clone https://github.com/github/copilot.vim.git  ~/.config/nvim/pack/github/start/copilot.vim"
-            echo
-            echo -e " 3. run 'nvim' and run:  :Copilot setup"
-            echo
-            echo -e " 4. delete again your NeoVim directories in order to continue with our install"
-            echo
-            echo -e " x. alternatively to all previous steps, you can simply import the dir ~/.config/github-copilot/ to your machine"
-            echo
-            if ! el_confirm "Ready to continue?" ; then
-                exit 1
-            fi
-        fi
-    fi
-
-    # TODO: install elivim in /usr/local/bin/
 
 
     set -x

@@ -27,6 +27,16 @@
 * Space + 
 * Space + 
 
+#### Copilot:
+Copilot shows automatically in the autocomplete menu while you type, you can close this menu with "Ctrl-e"
+* Alt + ] : Trigger a suggestion, or switch to the next one, '[' for previous
+* Alt + l : Accept suggestion
+* Ctrl + e : Close suggestion
+
+Suggestion: Disable entirely the autotrigger of the menu and enable the autotrigger of copilot
+
+_Tip: search for the keyword 'elivim' in the conf files_
+
 
 ------
 
