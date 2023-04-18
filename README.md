@@ -110,6 +110,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
 
 ### Colorschemes:
 - [ ] Elive monokai colorscheme has no competition, but it needs to be migrated to the NvChad code which is different
+- [ ] Make a RetroWave theme too which can look really cool? (wip)
 - [ ] Include other selections?
 
 
