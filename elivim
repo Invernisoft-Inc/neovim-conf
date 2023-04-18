@@ -146,7 +146,9 @@ exit_ok(){
     signal="$?"
     set +x
     if [[ "$signal" = 0 ]] ; then
-        echo -e "${el_c_g}${el_c_blink}Help Elive to continue making amazing things with a grateful donation! - https://www.elivecd.org/donate/${el_c_n}"
+        if [[ "${RANDOM:0:1}" = 5 ]] ; then
+            echo -e "${el_c_g}${el_c_blink}Help Elive to continue making amazing things with a grateful donation! - https://www.elivecd.org/donate/${el_c_n}"
+        fi
     fi
 
     rm -f "/tmp/.${SOURCE}.failed"
