@@ -172,15 +172,16 @@ setup_instructions(){
     echo -e ""
 
     # first install:
-    if ! ((is_was_installed)) ; then
+    if ((is_was_installed)) ; then
+        if ! el_confirm "Finish to prepare your system before to proceed with the next step - Continue now?" ; then
+            exit 1
+        fi
+    else
         if ! el_confirm "Have you satisfied correctly your dependencies?" ; then
             exit 1
         fi
     fi
 
-    if ! el_confirm "Finish to prepare your system before to proceed with the next step - Continue now?" ; then
-        exit 1
-    fi
 
     if [[ -e ~/.config/nvim ]] || [[ -e ~/.local/share/nvim ]] || [[ -e ~/.cache/nvim ]] ; then
         el_error "Existing Nvim configuration found, you must remove first before to continue:"
