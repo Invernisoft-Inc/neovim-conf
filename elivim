@@ -261,10 +261,14 @@ recreate_new_conf(){
 
     case "$SHELL" in
         *"zsh")
-            echo "alias nvim=$HOME/.config/nvim/custom/bin/elivim" >> ~/.zshrc
+            if ! grep -qs "alias.*elivim" ~/.zshrc ; then
+                echo "alias nvim=$HOME/.config/nvim/custom/bin/elivim" >> ~/.zshrc
+            fi
             ;;
         *"bash")
-            echo "alias nvim=$HOME/.config/nvim/custom/bin/elivim" >> ~/.bashrc
+            if ! grep -qs "alias.*elivim" ~/.bashrc ; then
+                echo "alias nvim=$HOME/.config/nvim/custom/bin/elivim" >> ~/.bashrc
+            fi
             ;;
     esac
 
