@@ -295,7 +295,7 @@ main(){
     #branch="v2.0"
     branch="elivedev"
 
-    if [[ ! -x ~/.config/nvim/custom/bin/elivim ]] ; then
+    if [[ ! -x ~/.config/nvim/elivim ]] ; then
         recreate_new_conf
     fi
 
