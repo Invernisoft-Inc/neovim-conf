@@ -304,7 +304,7 @@ main(){
 
     echo -en "Updating..."
     command git fetch -q origin ${branch}
-    echo -e "\"Updated       "
+    echo -e "\rUpdated       "
 
     #if [[ "$( cat .git/refs/remotes/origin/${branch} )" != "$( cat .git/HEAD )" ]] ; then
     if [[ "$( cat .git/refs/heads/${branch} )" != "$( cat .git/FETCH_HEAD | awk '{print $1}' )" ]] ; then
