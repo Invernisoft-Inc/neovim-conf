@@ -231,7 +231,7 @@ setup_instructions(){
 
 recreate_new_conf(){
     #if [[ "$( ls -1 ~/.local/share/nvim/nvchad/base46/ 2>/dev/null | wc -l )" -gt 1 ]] ; then
-    if [[ -e ~/.config/nvim/bin/elivim ]] ; then
+    if [[ -e ~/.config/nvim/custom/bin/elivim ]] ; then
         is_was_installed=1
     fi
     if ! ((is_reinstall_wanted)) ; then
@@ -254,6 +254,18 @@ recreate_new_conf(){
     fi
 
     git clone -b "$branch" https://github.com/Invernisoft-Inc/NvChad ~/.config/nvim --depth 1
+
+    mkdir -p ~/.config/nvim/custom/bin/elivim
+    cp "$0" ~/.config/nvim/custom/bin/elivim
+
+    case "$SHELL" in
+        *"zsh")
+            echo "alias nvim=$HOME/.config/nvim/custom/bin/elivim" >> ~/.zshrc
+            ;;
+        *"bash")
+            echo "alias nvim=$HOME/.config/nvim/custom/bin/elivim" >> ~/.bashrc
+            ;;
+    esac
 
     el_info "Elivim installed"
 
