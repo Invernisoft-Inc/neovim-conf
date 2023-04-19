@@ -96,8 +96,9 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [ ] Show the cursor cuc & cul when switching windows
 - [ ] EFL full support & EDC
 
-### Ideas
+### Wishlist
 * Trouble - A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing. - https://github.com/folke/trouble.nvim
+* Hover - a plugin that shows things when you mouse-over words: https://github.com/lewis6991/hover.nvim
 
 
 ### Hotkeys
