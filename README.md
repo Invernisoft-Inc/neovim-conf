@@ -117,8 +117,12 @@ _Tip: search for the keyword 'elivim' in the conf files_
 
 ### Colorschemes:
 - [ ] Elive monokai colorscheme has no competition, but it needs to be migrated to the NvChad code which is different
+    - compare values with https://vscodethemes.com/e/jonesnc.molokayo/molokayo?language=javascript
 - [ ] Make a RetroWave theme too which can look really cool? (wip)
+    - https://vscodethemes.com/e/maxenceblanc.sia-synthwave/sia-synthwave-colour-theme?language=javascript
+    - https://vscodethemes.com/e/nexxai.material-synthwave-vscode/material-synthwave?language=javascript
 - [ ] Include other selections?
+
 
 
 ### Bugs (possible) to check:
