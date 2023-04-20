@@ -48,6 +48,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
 
 #### Plugins
 - [ ] PHP & Javascript good support
+    * make sure to include the best support for "php and JavaScript, mostly VueJS"
     * equivalentinvim spf13/PIV ?
     * equivalentinvim pangloss/vim-javascript ?
 - [ ] Error reporting
