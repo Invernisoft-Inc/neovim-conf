@@ -61,11 +61,13 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [ ] Execute-on-save: this is a pretty need thing, research a plugin that triggers a user specified action when its saved
     * equivalentinvim vim-dispatch runs them in BG
 - [ ] Autocomplete: equivalentinvim: supertab, neocomplcache, youcompleteme
+    - see the example of "supertab" to change the cmp behaviour: https://www.lazyvim.org/configuration/examples
 - [ ] faster moving: equivalentinvim: easymotion
     * https://github.com/phaazon/hop.nvim
     * better: https://github.com/ggandor/lightspeed.nvim
     * another, sucesor: https://github.com/ggandor/leap.nvim
     * many more options: https://github.com/rockerBOO/awesome-neovim#motion
+    * fuzzy and funny too: https://github.com/ripxorip/aerojump.nvim
 - [X] file management: NvChad has it
     * equivalentinvim "ctrlp" & "ctrlp-funky" features?
     * equivalentinvim "nerdtree" features?
@@ -73,6 +75,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [ ] equivalentinvim TagList: surce code browser with tags in a panel (functions, variables, etc)
     * support for EDC and PHP files
 - [ ] Alignator of code, equivalentinvim is vim-easy-align & tabular: http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+    * others: vim-easy-align, tabular, etc
 - [ ] Grep feature to equivalent to search between the project, buffers, etc... (NvChad has it i think)
     * realtime, fuzzy-finder required, see ",fu" in elive-vim
 - [ ] Show the definition prototype (like C headers) while typing, equivalentinvim echofunc
@@ -103,12 +106,24 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [ ] Feature to "sudo save" file when no permissions
 - [ ] Show the cursor cuc & cul when switching windows
 - [ ] EFL full support & EDC
+- [+] Beacon - cursor jump on change, to see whare it is (note: needs to be loaded) https://github.com/DanilaMihailov/beacon.nvim
+
+### GIT plugins
+* https://github.com/jesseduffield/lazygit
+
+### Alternatives:
+* tagbar:
+    - https://github.com/simrat39/symbols-outline.nvim
+    - https://github.com/liuchengxu/vista.vim
+    - https://github.com/stevearc/aerial.nvim
 
 ### TODO confs to add:
 * Tabufline: have the Tabs opened by default in colapsed mode so that the feature can be seen and used (try: :tabnew )
 * relative numbers in auto mode: https://github.com/nkakouros-original/numbers.nvim
 * "surround" actions, similar to pressing ""
 * make telescope style bordered, but we need to set a better theme bg for it first
+* pulse cursor when search: https://github.com/inside/vim-search-pulse
+* "showmarks" (ma, mb...)
 
 ### Wishlist
 * Trouble - A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing. - https://github.com/folke/trouble.nvim
@@ -123,7 +138,11 @@ _Tip: search for the keyword 'elivim' in the conf files_
 * git related (fzf) https://github.com/ray-x/forgit.nvim
 * better search and replace for all the project: https://github.com/ray-x/sad.nvim
 * emoji picker: https://github.com/ziontee113/icon-picker.nvim
+* move easly blocks: https://github.com/matze/vim-move
 * MUCH MORE: https://github.com/rockerBOO/awesome-neovim
+
+### Other Frameworks to try:
+- https://www.lazyvim.org/keymaps
 
 ### Research
 - WOW big setup, try and see: https://github.com/ray-x/nvim
@@ -132,8 +151,10 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - https://github.com/ray-x/web-tools.nvim
 
 ### LSP related Wishlist
-- https://github.com/ray-x/navigator.lua
+- note: we used syntastic, which I think is not needed with lsp?
+* https://github.com/ray-x/navigator.lua
 * https://github.com/ray-x/lsp_signature.nvim
+* installer: https://github.com/williamboman/nvim-lsp-installer
 - DUP - [ ] comp-nvim-lsp : https://youtu.be/h4g0m0Iwmys?t=256
 Hover/Signature with borders
     https://github.com/mattleong/CosmicNvim/blob/main/lua/cosmic/lsp/init.lua
@@ -162,6 +183,7 @@ Code actions (using Telescope)
 
 ### Colorschemes:
 * themes editor https://github.com/rktjmp/lush.nvim
+* another one https://github.com/lifepillar/vim-colortemplate
 - [ ] Elive monokai colorscheme has no competition, but it needs to be migrated to the NvChad code which is different
     - compare values with https://vscodethemes.com/e/jonesnc.molokayo/molokayo?language=javascript
 - [ ] Make a RetroWave theme too which can look really cool? (wip)
@@ -183,5 +205,9 @@ Code actions (using Telescope)
 * NvChad Introduction: https://youtu.be/Mtgo-nP_r8Y
 * NvChad docs: https://nvchad.com/docs/quickstart/install
 * NeoVim from Scratch (a guided tutorial of NeoVim customization and plugins): https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ
+* converting viml to lua: https://www.imaginaryrobots.net/posts/2021-04-17-converting-vimrc-to-lua/
+* VimL to Lua: https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
+* another howto https://www.meetgor.com/neovim-vimscript-to-lua/
+* nvim lua guide https://github.com/RicardoRien/nvim-lua-guide/blob/master/README.esp.md
 
 
