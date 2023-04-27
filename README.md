@@ -138,9 +138,6 @@ Ideas:
 * make telescope style bordered, but we need to set a better theme bg for it first
 * pulse cursor when search: https://github.com/inside/vim-search-pulse
 * menu / autocompletion, works with Up and Down keys
-* (plugin?) - Jump to the last position when reopening a file: not needed with the plugin
-    - https://github.com/farmergreg/vim-lastplace
-    - https://github.com/zhimsel/vim-stay
 * foldcolumn are still needed?
 * jk in visual mode don't be gk and gj, they are annoying because you think its only one line
 
