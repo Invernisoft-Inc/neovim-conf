@@ -46,6 +46,15 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [ ] NvChad?
 - [ ] Lazy? https://youtu.be/2ahI8lYUYgw?t=199
 
+### Copilot brainstorming:
+Options:
+1. have it integrated on the menu (not so handy)
+2. having it always show (automenu needs to be removed)
+3. having the auto menu + copilot on manual trigger + supertab for Tab key + ultisnips
+
+Ideas:
+    - do not use Enter for accept, use a specific key, which will be the same for other features like ultisnips
+
 #### Plugins
 - [ ] PHP & Javascript good support
     * make sure to include the best support for "php and JavaScript, mostly VueJS"
@@ -55,17 +64,20 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [ ] Snippets:
    - [ ] comp-nvim-lsp : https://youtu.be/h4g0m0Iwmys?t=256
    - equivalentinvim: ultisnips, with own snippets for codes and mapping of locations with predefined values
+   - UltiSnips integration: https://github.com/quangnguyen30192/cmp-nvim-ultisnips
    - converter: https://github.com/smjonas/snippet-converter.nvim
-- [ ] Copilot.~~vim~~lua
+- [X] Copilot.~~vim~~lua
 - [ ] Copilot cmp: https://github.com/zbirenbaum/copilot-cmp
+    - Alternative! TABNINE! wtf seems better: https://www.tabnine.com/ - https://github.com/tzachar/cmp-tabnine
 - [ ] Execute-on-save: this is a pretty need thing, research a plugin that triggers a user specified action when its saved
     * equivalentinvim vim-dispatch runs them in BG
 - [ ] Autocomplete: equivalentinvim: supertab, neocomplcache, youcompleteme
     - see the example of "supertab" to change the cmp behaviour: https://www.lazyvim.org/configuration/examples
+    - list of plugins for nvim-cmp: https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources#miscellaneous
 - [ ] faster moving: equivalentinvim: easymotion
     * https://github.com/phaazon/hop.nvim
     * better: https://github.com/ggandor/lightspeed.nvim
-    * another, sucesor: https://github.com/ggandor/leap.nvim
+    * another, sucesor: https://github.com/ggandor/leap.nvim - demo: https://avimitin.github.io/nvim/cursor-movement.html
     * many more options: https://github.com/rockerBOO/awesome-neovim#motion
     * fuzzy and funny too: https://github.com/ripxorip/aerojump.nvim
 - [X] file management: NvChad has it
@@ -80,10 +92,8 @@ _Tip: search for the keyword 'elivim' in the conf files_
     * realtime, fuzzy-finder required, see ",fu" in elive-vim
 - [ ] Show the definition prototype (like C headers) while typing, equivalentinvim echofunc
 - [ ] Welcome page for neovim, new users running (guide/tutorial) it or simply running it without parameters, equivalentinvim vim-startify
-- [ ] Show marks visually, nvim nor NvChad does it by default, equivalentinvim ShowMarks7
 - [ ] Git powerful integration, equivalentinvim vim-fugitive
     * gitk gui? equivalentinvim gitv
-    * visual marks like added/removed lines etc, equivalentinvim vim-signify
 - [ ] Syntax checker / validator, equivalentinvim Syntastic
 - [ ] Comment / uncomment blocks, already included in NvChad? equivalentinvim nerdcommenter
 - [ ] Blink when search, equivalentinvim 'git://github.com/Elive/vim-bling'
@@ -108,6 +118,9 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [ ] EFL full support & EDC
 - [+] Beacon - cursor jump on change, to see whare it is (note: needs to be loaded) https://github.com/DanilaMihailov/beacon.nvim
 
+### Must have ones:
+* Command (vim commands) completion! as in https://github.com/Avimitin/nvim#Gallery
+
 ### GIT plugins
 * https://github.com/jesseduffield/lazygit
 
@@ -121,9 +134,21 @@ _Tip: search for the keyword 'elivim' in the conf files_
 * Tabufline: have the Tabs opened by default in colapsed mode so that the feature can be seen and used (try: :tabnew )
 * relative numbers in auto mode: https://github.com/nkakouros-original/numbers.nvim
 * "surround" actions, similar to pressing ""
+    - tpope/vim-surround works, but not the hotkey, no idea why, search another plugin for surround actions?
 * make telescope style bordered, but we need to set a better theme bg for it first
 * pulse cursor when search: https://github.com/inside/vim-search-pulse
-* "showmarks" (ma, mb...)
+* menu / autocompletion, works with Up and Down keys
+* (plugin?) - Jump to the last position when reopening a file: not needed with the plugin
+    - https://github.com/farmergreg/vim-lastplace
+    - https://github.com/zhimsel/vim-stay
+* foldcolumn are still needed?
+* jk in visual mode don't be gk and gj, they are annoying because you think its only one line
+
+### Top Wishlist
+* highlist other names like the one in cursor: https://www.reddit.com/r/neovim/comments/10xf7s0/localhighlightnvim_blazing_fast_highlight_of_word/
+
+### FIX
+- when a text is copied or deleted, it is saved to the clipboard, this is very annoying in normal vim usage because we only want to do that when ctrl+c for example
 
 ### Wishlist
 * Trouble - A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing. - https://github.com/folke/trouble.nvim
@@ -139,6 +164,10 @@ _Tip: search for the keyword 'elivim' in the conf files_
 * better search and replace for all the project: https://github.com/ray-x/sad.nvim
 * emoji picker: https://github.com/ziontee113/icon-picker.nvim
 * move easly blocks: https://github.com/matze/vim-move
+* macro manager: https://github.com/ecthelionvi/NeoComposer.nvim
+* show whitespaces because they are bad ntpeters/vim-better-whitespace
+    - not needed because we use LSP's
+* regexplainer https://github.com/bennypowers/nvim-regexplainer
 * MUCH MORE: https://github.com/rockerBOO/awesome-neovim
 
 ### Other Frameworks to try:
@@ -146,6 +175,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
 
 ### Research
 - WOW big setup, try and see: https://github.com/ray-x/nvim
+* https://dev.to/iggredible/what-is-inside-my-vimrc-3ob7
 
 ### web dev
 - https://github.com/ray-x/web-tools.nvim
@@ -191,6 +221,8 @@ Code actions (using Telescope)
     - https://vscodethemes.com/e/nexxai.material-synthwave-vscode/material-synthwave?language=javascript
 - [ ] Include other selections?
 - https://github.com/metalelf0/jellybeans-nvim
+- use the grays values like https://github.com/Avimitin/nvim/blob/master/docs/images/kanagawa.png
+- try to create a colorscheme with only the terminal colors modified to match our terminal colors (alt + i, run "colores" )
 
 
 
@@ -209,5 +241,6 @@ Code actions (using Telescope)
 * VimL to Lua: https://vonheikemen.github.io/devlog/tools/configuring-neovim-using-lua/
 * another howto https://www.meetgor.com/neovim-vimscript-to-lua/
 * nvim lua guide https://github.com/RicardoRien/nvim-lua-guide/blob/master/README.esp.md
+* Vim Regex (and other nices articles) https://dev.to/iggredible/learning-vim-regex-26ep
 
 
