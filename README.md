@@ -43,7 +43,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
 
 
 #### Framework:
-- [ ] NvChad?
+- [X] NvChad?
 - [ ] Lazy? https://youtu.be/2ahI8lYUYgw?t=199
 
 ### Copilot brainstorming:
@@ -55,12 +55,16 @@ Options:
 Ideas:
     - do not use Enter for accept, use a specific key, which will be the same for other features like ultisnips
 
+### BUGS:
+- [X] Something in our configs makes that when we :split, and close one buffer, the highlight of the actual linenumber is lost
+
 #### Plugins
-- [ ] PHP & Javascript good support
+- [X] PHP & Javascript good support
     * make sure to include the best support for "php and JavaScript, mostly VueJS"
     * equivalentinvim spf13/PIV ?
     * equivalentinvim pangloss/vim-javascript ?
-- [ ] Error reporting
+- [X] Error reporting
+    - with the notification plugin and similar features
 - [ ] Snippets:
    - [ ] comp-nvim-lsp : https://youtu.be/h4g0m0Iwmys?t=256
    - equivalentinvim: ultisnips, with own snippets for codes and mapping of locations with predefined values
@@ -69,8 +73,8 @@ Ideas:
 - [X] Copilot.~~vim~~lua
 - [ ] Copilot cmp: https://github.com/zbirenbaum/copilot-cmp
     - Alternative! TABNINE! wtf seems better: https://www.tabnine.com/ - https://github.com/tzachar/cmp-tabnine
-- [ ] Execute-on-save: this is a pretty need thing, research a plugin that triggers a user specified action when its saved
-    * equivalentinvim vim-dispatch runs them in BG
+- [X] Execute-on-save: this is a pretty need thing, research a plugin that triggers a user specified action when its saved
+    - use this one https://github.com/stevearc/overseer.nvim
 - [ ] Autocomplete: equivalentinvim: supertab, neocomplcache, youcompleteme
     - see the example of "supertab" to change the cmp behaviour: https://www.lazyvim.org/configuration/examples
     - list of plugins for nvim-cmp: https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources#miscellaneous
@@ -83,40 +87,41 @@ Ideas:
 - [X] file management: NvChad has it
     * equivalentinvim "ctrlp" & "ctrlp-funky" features?
     * equivalentinvim "nerdtree" features?
-- [ ] fuzzy-finder feature, NvChad has it?
-- [ ] equivalentinvim TagList: surce code browser with tags in a panel (functions, variables, etc)
-    * support for EDC and PHP files
+- [X] fuzzy-finder feature, NvChad has it?
+- [X] equivalentinvim TagList: surce code browser with tags in a panel (functions, variables, etc)
+- [X] support for EDC and PHP files
 - [ ] Alignator of code, equivalentinvim is vim-easy-align & tabular: http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
     * others: vim-easy-align, tabular, etc
-- [ ] Grep feature to equivalent to search between the project, buffers, etc... (NvChad has it i think)
+- [X] Grep feature to equivalent to search between the project, buffers, etc... (NvChad has it i think)
     * realtime, fuzzy-finder required, see ",fu" in elive-vim
 - [ ] Show the definition prototype (like C headers) while typing, equivalentinvim echofunc
-- [ ] Welcome page for neovim, new users running (guide/tutorial) it or simply running it without parameters, equivalentinvim vim-startify
+- [X] Welcome page for neovim, new users running (guide/tutorial) it or simply running it without parameters, equivalentinvim vim-startify
+    - [ ] We need a welcome / tutorial / guide function or similar, pointing to a website maybe
 - [ ] Git powerful integration, equivalentinvim vim-fugitive
     * gitk gui? equivalentinvim gitv
-- [ ] Syntax checker / validator, equivalentinvim Syntastic
-- [ ] Comment / uncomment blocks, already included in NvChad? equivalentinvim nerdcommenter
-- [ ] Blink when search, equivalentinvim 'git://github.com/Elive/vim-bling'
-- [ ] EFL integration, equivalentinvim 'git://git.enlightenment.org/editors/vim-configs.git'
+- [X] Syntax checker / validator, equivalentinvim Syntastic
+    - [X] We can use LSPs for that
+    - other ones are needed or we have enough with LSP? ask @deon
+- [X] Comment / uncomment blocks, already included in NvChad? equivalentinvim nerdcommenter
+- [X] Blink when search, equivalentinvim 'git://github.com/Elive/vim-bling'
+- [X] EFL integration, equivalentinvim 'git://git.enlightenment.org/editors/vim-configs.git'
 - [ ] Multiple cursors edition, equivalentinvim vim-multiple-cursors
-- [ ] Minimap feature?
-    * fast and light: https://github.com/wfxr/minimap.vim
-    * slow with visual features (which can be useful to be run only when needed): https://github.com/gorbit99/codewindow.nvim
 - [ ] Extra textblock and textobjs definitions?
-- [ ] Undo Tree feature (multiple undo histories), equivalentinvim undotree
-- [ ] powerline like bar, equivalentinvim vim-airline, NvChad has it?
+- [-] Undo Tree feature (multiple undo histories), equivalentinvim undotree - update: not needed / never used
+- [X] powerline like bar, equivalentinvim vim-airline, NvChad has it?
 - [ ] location push-pop feature, better if includes visual marks, equivalentinvim vim-kangaroo
 - [ ] Show what is going to be replaced with %s/foo/bar while typing, equivalentinvim vim-over
 - [X] Visualize HEX colors and names, equivalentinvim vim-coloresque - included in NvChad
 - [ ] Markdown and Asciidoc support (syntax, syntax checker, etc), also a previewer:
 - [ ] Preview (render) of things like markwon, equivalentinvim vim-preview
 - [ ] Show shitty M$ buggy newlines
-- [ ] Show syntax hilight names, equivalentinvim synstack
-- [ ] Show and fix whitespacing errors
-- [ ] Feature to "sudo save" file when no permissions
-- [ ] Show the cursor cuc & cul when switching windows
-- [ ] EFL full support & EDC
-- [+] Beacon - cursor jump on change, to see whare it is (note: needs to be loaded) https://github.com/DanilaMihailov/beacon.nvim
+- [X] Show syntax hilight names, equivalentinvim synstack
+    - we used a specific plugin for the TODOs and similar entries
+- [X] Show and fix whitespacing errors
+- [X] Feature to "sudo save" file when no permissions
+- [X] Show the cursor cuc & cul when switching windows
+- [X] EFL full support & EDC
+- [X] Beacon - cursor jump on change, to see whare it is https://github.com/DanilaMihailov/beacon.nvim
 
 ### Must have ones:
 * Command (vim commands) completion! as in https://github.com/Avimitin/nvim#Gallery
@@ -131,12 +136,13 @@ Ideas:
     - https://github.com/stevearc/aerial.nvim
 
 ### TODO confs to add:
-* Tabufline: have the Tabs opened by default in colapsed mode so that the feature can be seen and used (try: :tabnew )
-* relative numbers in auto mode: https://github.com/nkakouros-original/numbers.nvim
+* [X] Tabufline: have the Tabs opened by default in colapsed mode so that the feature can be seen and used (try: :tabnew )
+    - use Ctrl + t now
+* [X] relative numbers in auto mode: https://github.com/nkakouros-original/numbers.nvim
 * "surround" actions, similar to pressing ""
     - tpope/vim-surround works, but not the hotkey, no idea why, search another plugin for surround actions?
-* make telescope style bordered, but we need to set a better theme bg for it first
-* pulse cursor when search: https://github.com/inside/vim-search-pulse
+* [X] make telescope style bordered, but we need to set a better theme bg for it first
+* [X] pulse cursor when search: https://github.com/inside/vim-search-pulse
 * menu / autocompletion, works with Up and Down keys
 * foldcolumn are still needed?
 * jk in visual mode don't be gk and gj, they are annoying because you think its only one line
@@ -201,12 +207,16 @@ Code actions (using Telescope)
 * Use F5 for reloading the editor and its confs?
 
 ### Hotkeys
+- [ ] REMAP THEM in a more intuitive way, let's get some ideas:
+    - FIRST: check other frameworks to see their mappings ideas (lunarvim, etc)
+    - https://i.redd.it/7lgao7z2okwa1.png
 - [X] F1-F7 should be the same as how elive-vim config is, switch between :buffer and show line.
     * replaced by Tab and Shift-Tab which is much more friendly and uses less keys
-- [ ] F12: pastetoggle
+- [X] F12: pastetoggle
+    - not needed, better feature implemented
 - [ ] hotkeys to tabularize based in symbols like (, =, etc
-- [ ] Ctrl+s to save, Ctrl+q to quit?
-- [ ] Ctrl+c in visual to copy a text, set it to clipboard instead of default
+- [X] Ctrl+s to save, Ctrl+q to quit?
+- [X] Ctrl+c in visual to copy a text, set it to clipboard instead of default
 
 ### Colorschemes:
 * themes editor https://github.com/rktjmp/lush.nvim
@@ -227,6 +237,7 @@ Code actions (using Telescope)
 - [ ] fonts compatibility? over terminology, urxvt, ssh, tmux, etc
 - [ ] syntax working for special files: c (improved, equivalentinvim vim-syntax-extra), edc, markdown, asciidoc
 - [ ] Showing tabs can be annoying especially when copying the text, check vimrc conf to compare
+    - set a hotkey to remove all visuals (linenumbers, tabs, etc) and to re-enable them
 
 
 ### Howtos:
