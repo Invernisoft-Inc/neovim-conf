@@ -44,7 +44,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
 
 #### Framework:
 - [X] NvChad?
-- [ ] Lazy? https://youtu.be/2ahI8lYUYgw?t=199
+- [X] Lazy? https://youtu.be/2ahI8lYUYgw?t=199
 
 ### Copilot brainstorming:
 Options:
@@ -52,11 +52,29 @@ Options:
 2. having it always show (automenu needs to be removed)
 3. having the auto menu + copilot on manual trigger + supertab for Tab key + ultisnips
 
-Ideas:
-    - do not use Enter for accept, use a specific key, which will be the same for other features like ultisnips
+#### Ideas / TODOs:
+- do not use Enter for accept, use a specific key, which will be the same for other features like ultisnips
+    imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+    let g:copilot_no_tab_map = v:true
+
+- [ ] Wow ChatGPT full featured plugin: https://github.com/jackMort/ChatGPT.nvim
+
+- Add a toggle of autosuggestions: :lua  require("copilot.suggestion").toggle_auto_trigger()
+    - also show :Copilot status   in the notification window
+- Important, be updated from this needed WIP feature: https://githubnext.com/projects/copilot-view/
+
 
 ### BUGS:
 - [X] Something in our configs makes that when we :split, and close one buffer, the highlight of the actual linenumber is lost
+- [ ] BASH syntax: Make sure the issue is with the bash syntax and not with the bash LSP first, if so, /usr/lib/elive-tools/functions shows false positives, report them to https://github.com/nvim-treesitter/nvim-treesitter/issues?q=is%3Aissue+is%3Aopen+bash  - or better: https://github.com/tree-sitter/tree-sitter-bash/issues
+- [X] j & k in Normal mode scrolls as normal lines, we want to scroll real lines instead (at least me)
+    - it is not a bug because it doesn't happens when pressing 10k or similar, description link included
+
+### Bugs (possible) to check:
+- [ ] fonts compatibility? over terminology, urxvt, ssh, tmux, etc
+- [ ] syntax working for special files: c (improved, equivalentinvim vim-syntax-extra), edc, markdown, asciidoc
+- [ ] Showing tabs can be annoying especially when copying the text, check vimrc conf to compare
+    - set a hotkey to remove all visuals (linenumbers, tabs, etc) and to re-enable them
 
 #### Plugins
 - [X] PHP & Javascript good support
@@ -71,15 +89,16 @@ Ideas:
    - UltiSnips integration: https://github.com/quangnguyen30192/cmp-nvim-ultisnips
    - converter: https://github.com/smjonas/snippet-converter.nvim
 - [X] Copilot.~~vim~~lua
-- [ ] Copilot cmp: https://github.com/zbirenbaum/copilot-cmp
+- [X] Copilot cmp: https://github.com/zbirenbaum/copilot-cmp
     - Alternative! TABNINE! wtf seems better: https://www.tabnine.com/ - https://github.com/tzachar/cmp-tabnine
 - [X] Execute-on-save: this is a pretty need thing, research a plugin that triggers a user specified action when its saved
     - use this one https://github.com/stevearc/overseer.nvim
 - [ ] Autocomplete: equivalentinvim: supertab, neocomplcache, youcompleteme
     - see the example of "supertab" to change the cmp behaviour: https://www.lazyvim.org/configuration/examples
     - list of plugins for nvim-cmp: https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources#miscellaneous
-- [ ] faster moving: equivalentinvim: easymotion
-    * https://github.com/phaazon/hop.nvim
+- [X] faster moving: equivalentinvim: easymotion
+    * https://github.com/phaazon/hop.nvim <-- selected
+    * sneak.vim
     * better: https://github.com/ggandor/lightspeed.nvim
     * another, sucesor: https://github.com/ggandor/leap.nvim - demo: https://avimitin.github.io/nvim/cursor-movement.html
     * many more options: https://github.com/rockerBOO/awesome-neovim#motion
@@ -90,7 +109,7 @@ Ideas:
 - [X] fuzzy-finder feature, NvChad has it?
 - [X] equivalentinvim TagList: surce code browser with tags in a panel (functions, variables, etc)
 - [X] support for EDC and PHP files
-- [ ] Alignator of code, equivalentinvim is vim-easy-align & tabular: http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+- [X] Alignator of code, equivalentinvim is vim-easy-align & tabular: http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
     * others: vim-easy-align, tabular, etc
 - [X] Grep feature to equivalent to search between the project, buffers, etc... (NvChad has it i think)
     * realtime, fuzzy-finder required, see ",fu" in elive-vim
@@ -105,15 +124,16 @@ Ideas:
 - [X] Comment / uncomment blocks, already included in NvChad? equivalentinvim nerdcommenter
 - [X] Blink when search, equivalentinvim 'git://github.com/Elive/vim-bling'
 - [X] EFL integration, equivalentinvim 'git://git.enlightenment.org/editors/vim-configs.git'
-- [ ] Multiple cursors edition, equivalentinvim vim-multiple-cursors
+- [-] Multiple cursors edition, equivalentinvim vim-multiple-cursors
 - [ ] Extra textblock and textobjs definitions?
 - [-] Undo Tree feature (multiple undo histories), equivalentinvim undotree - update: not needed / never used
 - [X] powerline like bar, equivalentinvim vim-airline, NvChad has it?
-- [ ] location push-pop feature, better if includes visual marks, equivalentinvim vim-kangaroo
-- [ ] Show what is going to be replaced with %s/foo/bar while typing, equivalentinvim vim-over
+- [-] location push-pop feature, better if includes visual marks, equivalentinvim vim-kangaroo
+- [-] Show what is going to be replaced with %s/foo/bar while typing, equivalentinvim vim-over
 - [X] Visualize HEX colors and names, equivalentinvim vim-coloresque - included in NvChad
 - [ ] Markdown and Asciidoc support (syntax, syntax checker, etc), also a previewer:
 - [ ] Preview (render) of things like markwon, equivalentinvim vim-preview
+- [ ] Preview https://neovimcraft.com/plugin/iamcco/markdown-preview.nvim/index.html
 - [ ] Show shitty M$ buggy newlines
 - [X] Show syntax hilight names, equivalentinvim synstack
     - we used a specific plugin for the TODOs and similar entries
@@ -123,11 +143,15 @@ Ideas:
 - [X] EFL full support & EDC
 - [X] Beacon - cursor jump on change, to see whare it is https://github.com/DanilaMihailov/beacon.nvim
 
+### CMP
+- [ ] Include a signatures autocompletion if is already not included: https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
+
 ### Must have ones:
 * Command (vim commands) completion! as in https://github.com/Avimitin/nvim#Gallery
 
 ### GIT plugins
 * https://github.com/jesseduffield/lazygit
+* https://github.com/sindrets/diffview.nvim
 
 ### Alternatives:
 * tagbar:
@@ -149,6 +173,7 @@ Ideas:
 
 ### Top Wishlist
 * highlist other names like the one in cursor: https://www.reddit.com/r/neovim/comments/10xf7s0/localhighlightnvim_blazing_fast_highlight_of_word/
+* matchup: https://github.com/andymass/vim-matchup#features
 
 ### FIX
 - when a text is copied or deleted, it is saved to the clipboard, this is very annoying in normal vim usage because we only want to do that when ctrl+c for example
@@ -214,7 +239,7 @@ Code actions (using Telescope)
     * replaced by Tab and Shift-Tab which is much more friendly and uses less keys
 - [X] F12: pastetoggle
     - not needed, better feature implemented
-- [ ] hotkeys to tabularize based in symbols like (, =, etc
+- [X] hotkeys to tabularize based in symbols like (, =, etc
 - [X] Ctrl+s to save, Ctrl+q to quit?
 - [X] Ctrl+c in visual to copy a text, set it to clipboard instead of default
 
@@ -232,12 +257,9 @@ Code actions (using Telescope)
 - try to create a colorscheme with only the terminal colors modified to match our terminal colors (alt + i, run "colores" )
 
 
+### Optimizations
+- verify the startup speed time after everything is set up to see how good it works: https://www.reddit.com/r/neovim/comments/10e6ex7/what_is_your_neovim_load_time/
 
-### Bugs (possible) to check:
-- [ ] fonts compatibility? over terminology, urxvt, ssh, tmux, etc
-- [ ] syntax working for special files: c (improved, equivalentinvim vim-syntax-extra), edc, markdown, asciidoc
-- [ ] Showing tabs can be annoying especially when copying the text, check vimrc conf to compare
-    - set a hotkey to remove all visuals (linenumbers, tabs, etc) and to re-enable them
 
 
 ### Howtos:
