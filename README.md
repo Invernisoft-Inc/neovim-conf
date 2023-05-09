@@ -28,11 +28,6 @@
 * Space + 
 
 #### Copilot:
-Copilot shows automatically in the autocomplete menu while you type, you can close this menu with "Ctrl-e"
-* Alt + ] : Trigger a suggestion, or switch to the next one, '[' for previous
-* Alt + l : Accept suggestion
-* Ctrl + e : Close suggestion
-
 Suggestion: Disable entirely the autotrigger of the menu and enable the autotrigger of copilot
 
 _Tip: search for the keyword 'elivim' in the conf files_
@@ -40,17 +35,6 @@ _Tip: search for the keyword 'elivim' in the conf files_
 
 ------
 
-
-
-#### Framework:
-- [X] NvChad?
-- [X] Lazy? https://youtu.be/2ahI8lYUYgw?t=199
-
-### Copilot brainstorming:
-Options:
-1. have it integrated on the menu (not so handy)
-2. having it always show (automenu needs to be removed)
-3. having the auto menu + copilot on manual trigger + supertab for Tab key + ultisnips
 
 #### Ideas / TODOs:
 - do not use Enter for accept, use a specific key, which will be the same for other features like ultisnips
@@ -70,14 +54,14 @@ Options:
 - [ ] BASH syntax: Make sure the issue is with the bash syntax and not with the bash LSP first, if so, /usr/lib/elive-tools/functions shows false positives, report them to https://github.com/nvim-treesitter/nvim-treesitter/issues?q=is%3Aissue+is%3Aopen+bash  - or better: https://github.com/tree-sitter/tree-sitter-bash/issues
 - [X] j & k in Normal mode scrolls as normal lines, we want to scroll real lines instead (at least me)
     - it is not a bug because it doesn't happens when pressing 10k or similar, description link included
-- [ ] Terminals are not working correctly, you need to press "i" in order to start on insert mode, I think some new plugin is causing this
-- [ ] Termianls include the visual line when you reopen them, this is annoying, maybe the visual line should be removed entirely because with Specs is not much more needed too
-- [ ] Nvim consumes some cpu, why? try disabling some plugins to find the one causing the issue
-- [ ] in autocomplete, if there's a snippet and we want to autocommplete the word the cannot trigger it unless the menu is open, this can be annoying, so we may need to reconfigure the <c-j> key to if expandable... else fallback()
+- [X] Terminals are not working correctly, you need to press "i" in order to start on insert mode, I think some new plugin is causing this
+- [X] Termianls include the visual line when you reopen them, this is annoying, maybe the visual line should be removed entirely because with Specs is not much more needed too
+- [X] Nvim consumes some cpu, why? try disabling some plugins to find the one causing the issue
+- [X] in autocomplete, if there's a snippet and we want to autocommplete the word the cannot trigger it unless the menu is open, this can be annoying, so we may need to reconfigure the <c-j> key to if expandable... else fallback()
 
 ### Bugs (possible) to check:
 - [ ] fonts compatibility? over terminology, urxvt, ssh, tmux, etc
-- [ ] syntax working for special files: c (improved, equivalentinvim vim-syntax-extra), edc, markdown, asciidoc
+- [X] syntax working for special files: c (improved, equivalentinvim vim-syntax-extra), edc, markdown, asciidoc
 - [ ] Showing tabs can be annoying especially when copying the text, check vimrc conf to compare
     - set a hotkey to remove all visuals (linenumbers, tabs, etc) and to re-enable them
 
@@ -186,8 +170,7 @@ Options:
 * [X] make telescope style bordered, but we need to set a better theme bg for it first
 * [X] pulse cursor when search: https://github.com/inside/vim-search-pulse
 * menu / autocompletion, works with Up and Down keys
-* foldcolumn are still needed?
-* jk in visual mode don't be gk and gj, they are annoying because you think its only one line
+* [ ] move all the plugin's keymaps to their section, so that if the plugin is disabled, its keymaps too, but also to show it correctly in the cheatsheet
 
 ### FIX
 - when a text is copied or deleted, it is saved to the clipboard, this is very annoying in normal vim usage because we only want to do that when ctrl+c for example
