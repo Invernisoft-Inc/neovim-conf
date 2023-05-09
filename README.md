@@ -62,6 +62,7 @@ Options:
 - Add a toggle of autosuggestions: :lua  require("copilot.suggestion").toggle_auto_trigger()
     - also show :Copilot status   in the notification window
 - Important, be updated from this needed WIP feature: https://githubnext.com/projects/copilot-view/
+- [ ] A hotkey to close "all" opened windows (quickfix, tagbar, etc...) in one shot (or use Space+x ?)
 
 
 ### BUGS:
@@ -69,6 +70,10 @@ Options:
 - [ ] BASH syntax: Make sure the issue is with the bash syntax and not with the bash LSP first, if so, /usr/lib/elive-tools/functions shows false positives, report them to https://github.com/nvim-treesitter/nvim-treesitter/issues?q=is%3Aissue+is%3Aopen+bash  - or better: https://github.com/tree-sitter/tree-sitter-bash/issues
 - [X] j & k in Normal mode scrolls as normal lines, we want to scroll real lines instead (at least me)
     - it is not a bug because it doesn't happens when pressing 10k or similar, description link included
+- [ ] Terminals are not working correctly, you need to press "i" in order to start on insert mode, I think some new plugin is causing this
+- [ ] Termianls include the visual line when you reopen them, this is annoying, maybe the visual line should be removed entirely because with Specs is not much more needed too
+- [ ] Nvim consumes some cpu, why? try disabling some plugins to find the one causing the issue
+- [ ] in autocomplete, if there's a snippet and we want to autocommplete the word the cannot trigger it unless the menu is open, this can be annoying, so we may need to reconfigure the <c-j> key to if expandable... else fallback()
 
 ### Bugs (possible) to check:
 - [ ] fonts compatibility? over terminology, urxvt, ssh, tmux, etc
@@ -142,6 +147,11 @@ Options:
 - [X] Show the cursor cuc & cul when switching windows
 - [X] EFL full support & EDC
 - [X] Beacon - cursor jump on change, to see whare it is https://github.com/DanilaMihailov/beacon.nvim
+    - switched to a better and faster one
+- [ ] Hilight other similar words than the one in the cursor: https://github.com/RRethy/vim-illuminate
+    * highlist other names like the one in cursor: https://www.reddit.com/r/neovim/comments/10xf7s0/localhighlightnvim_blazing_fast_highlight_of_word/
+- [X]  matchup: https://github.com/andymass/vim-matchup#features
+- [ ] Improved visuals with Dressing https://github.com/stevearc/dressing.nvim
 
 ### CMP
 - [ ] Include a signatures autocompletion if is already not included: https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
@@ -150,8 +160,15 @@ Options:
 * Command (vim commands) completion! as in https://github.com/Avimitin/nvim#Gallery
 
 ### GIT plugins
+* gitsigns, much better way to visualize our code different than in git, we should always see that:  https://github.com/lewis6991/gitsigns.nvim
+    - or: I think it supports more features like "opening previous state", we should see that, not sure how handy it is
 * https://github.com/jesseduffield/lazygit
 * https://github.com/sindrets/diffview.nvim
+* show differences of added / removed / etc:
+    NOTE: maybe we don't need it on the new framework, seems like we can see them but is not very clear
+    Note: seems like we use this one that has already some good features, we must check them https://github.com/lewis6991/gitsigns.nvim
+        * https://github.com/airblade/vim-gitgutter
+        * https://github.com/mhinz/vim-signify
 
 ### Alternatives:
 * tagbar:
@@ -165,15 +182,12 @@ Options:
 * [X] relative numbers in auto mode: https://github.com/nkakouros-original/numbers.nvim
 * "surround" actions, similar to pressing ""
     - tpope/vim-surround works, but not the hotkey, no idea why, search another plugin for surround actions?
+    - mini.surround
 * [X] make telescope style bordered, but we need to set a better theme bg for it first
 * [X] pulse cursor when search: https://github.com/inside/vim-search-pulse
 * menu / autocompletion, works with Up and Down keys
 * foldcolumn are still needed?
 * jk in visual mode don't be gk and gj, they are annoying because you think its only one line
-
-### Top Wishlist
-* highlist other names like the one in cursor: https://www.reddit.com/r/neovim/comments/10xf7s0/localhighlightnvim_blazing_fast_highlight_of_word/
-* matchup: https://github.com/andymass/vim-matchup#features
 
 ### FIX
 - when a text is copied or deleted, it is saved to the clipboard, this is very annoying in normal vim usage because we only want to do that when ctrl+c for example
@@ -193,13 +207,18 @@ Options:
 * emoji picker: https://github.com/ziontee113/icon-picker.nvim
 * move easly blocks: https://github.com/matze/vim-move
 * macro manager: https://github.com/ecthelionvi/NeoComposer.nvim
-* show whitespaces because they are bad ntpeters/vim-better-whitespace
-    - not needed because we use LSP's
 * regexplainer https://github.com/bennypowers/nvim-regexplainer
+* search/replace between multiple files: https://github.com/nvim-pack/nvim-spectre
 * MUCH MORE: https://github.com/rockerBOO/awesome-neovim
+
+### Voice commands
+Using Vim from voice can be amazing and it helps knowing how to use it, see this demo: https://youtu.be/TEBMlXRjhZY , maybe we can use a plugin like:
+- [ ] https://github.com/eyalk11/nvim-voicerec - + give a comment on the reddit guy: https://www.reddit.com/r/neovim/comments/132c36x/nvimvoicerec_add_speechtotext_to_neovim_useful/
 
 ### Other Frameworks to try:
 - https://www.lazyvim.org/keymaps
+- https://github.com/ecosse3/nvim  - comment from https://www.reddit.com/r/neovim/comments/135zudx/what_neovim_configuration_is_this/
+- https://github.com/nvim-lua/kickstart.nvim
 
 ### Research
 - WOW big setup, try and see: https://github.com/ray-x/nvim
@@ -209,6 +228,7 @@ Options:
 - https://github.com/ray-x/web-tools.nvim
 
 ### LSP related Wishlist
+- keymaps, ideas, plugins, etc: https://www.lazyvim.org/keymaps#lsp
 - note: we used syntastic, which I think is not needed with lsp?
 * https://github.com/ray-x/navigator.lua
 * https://github.com/ray-x/lsp_signature.nvim
@@ -222,10 +242,15 @@ Diagnostics with borders
     https://github.com/mattleong/CosmicNvim/blob/main/lua/cosmic/lsp/diagnostics.lua#L5
 Code actions (using Telescope)
     https://github.com/mattleong/CosmicNvim/blob/main/lua/cosmic/core/navigation/init.lua#L70
+- Symbols? from https://youtu.be/stqUbv-5u2s?t=342 -> https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua#L382
 
 ### Code, debug, quality, etc...
 * https://github.com/utilyre/barbecue.nvim
 * GDB directly on nvim editing the code failing: https://github.com/sakhnik/nvim-gdb - demo: https://asciinema.org/a/134144
+* DAP: https://github.com/mfussenegger/nvim-dap   INFO : https://www.lazyvim.org/plugins/extras/dap.core
+    + https://github.com/jay-babu/mason-nvim-dap.nvim
+    + https://github.com/rcarriga/nvim-dap-ui
+    + https://github.com/theHamsta/nvim-dap-virtual-text
 * Git searchigns https://github.com/aaronhallaert/advanced-git-search.nvim
 
 ### Ideas:
@@ -233,7 +258,9 @@ Code actions (using Telescope)
 
 ### Hotkeys
 - [ ] REMAP THEM in a more intuitive way, let's get some ideas:
-    - FIRST: check other frameworks to see their mappings ideas (lunarvim, etc)
+    - FIRST: check other frameworks to see their mappings ideas
+        - lunarvim
+        - https://www.lazyvim.org/keymaps
     - https://i.redd.it/7lgao7z2okwa1.png
 - [X] F1-F7 should be the same as how elive-vim config is, switch between :buffer and show line.
     * replaced by Tab and Shift-Tab which is much more friendly and uses less keys
@@ -251,14 +278,22 @@ Code actions (using Telescope)
 - [ ] Make a RetroWave theme too which can look really cool? (wip)
     - https://vscodethemes.com/e/maxenceblanc.sia-synthwave/sia-synthwave-colour-theme?language=javascript
     - https://vscodethemes.com/e/nexxai.material-synthwave-vscode/material-synthwave?language=javascript
+- [ ] Hacker colorscheme based on common "cyan" values like on this piece of video (take the colorscheme from it, include red & green as in the movies): https://youtu.be/-uleG_Vecis?t=581
 - [ ] Include other selections?
 - https://github.com/metalelf0/jellybeans-nvim
 - use the grays values like https://github.com/Avimitin/nvim/blob/master/docs/images/kanagawa.png
 - try to create a colorscheme with only the terminal colors modified to match our terminal colors (alt + i, run "colores" )
 
+### Tutorials
+- [ ] https://github.com/tjdevries/train.nvim
+
+### Offtopic
+* jokes: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/autoload/jokes.vim
+
 
 ### Optimizations
 - verify the startup speed time after everything is set up to see how good it works: https://www.reddit.com/r/neovim/comments/10e6ex7/what_is_your_neovim_load_time/
+    - https://github.com/dstein64/vim-startuptime
 
 
 
@@ -272,5 +307,6 @@ Code actions (using Telescope)
 * another howto https://www.meetgor.com/neovim-vimscript-to-lua/
 * nvim lua guide https://github.com/RicardoRien/nvim-lua-guide/blob/master/README.esp.md
 * Vim Regex (and other nices articles) https://dev.to/iggredible/learning-vim-regex-26ep
+* Some LSP codes introduction: https://www.youtube.com/watch?v=stqUbv-5u2s
 
 
