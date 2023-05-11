@@ -13,7 +13,7 @@
 * Space : this is the "leader" key, wait one second to show you configured triggers
 * Space + t + h : select a theme
 * Space + c + h : cheatsheet
-* Space + c + m : git commits, switch to specific checkouts in realtime
+* Space + g + c : git commits, switch to specific checkouts in realtime
 * Space + f + a : find files with browser and previewer
 * Space + f + o : find old (history) edited files
 * Space + f + w : grep in your files with live previewer
@@ -58,11 +58,13 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [X] Termianls include the visual line when you reopen them, this is annoying, maybe the visual line should be removed entirely because with Specs is not much more needed too
 - [X] Nvim consumes some cpu, why? try disabling some plugins to find the one causing the issue
 - [X] in autocomplete, if there's a snippet and we want to autocommplete the word the cannot trigger it unless the menu is open, this can be annoying, so we may need to reconfigure the <c-j> key to if expandable... else fallback()
+- [X] when a text is copied or deleted, it is saved to the clipboard, this is very annoying in normal vim usage because we only want to do that when ctrl+c for example
+- [ ] Bash: only LSP to files that has /bin/bash, similar to the "env" conf but only for bash, this avoids source files to be LSPized like mkdeb controls
 
 ### Bugs (possible) to check:
 - [ ] fonts compatibility? over terminology, urxvt, ssh, tmux, etc
 - [X] syntax working for special files: c (improved, equivalentinvim vim-syntax-extra), edc, markdown, asciidoc
-- [ ] Showing tabs can be annoying especially when copying the text, check vimrc conf to compare
+- [X] Showing tabs can be annoying especially when copying the text, check vimrc conf to compare
     - set a hotkey to remove all visuals (linenumbers, tabs, etc) and to re-enable them
 
 #### Plugins
@@ -102,11 +104,10 @@ _Tip: search for the keyword 'elivim' in the conf files_
     * others: vim-easy-align, tabular, etc
 - [X] Grep feature to equivalent to search between the project, buffers, etc... (NvChad has it i think)
     * realtime, fuzzy-finder required, see ",fu" in elive-vim
-- [ ] Show the definition prototype (like C headers) while typing, equivalentinvim echofunc
+- [X] Show the definition prototype (like C headers) while typing, equivalentinvim echofunc
 - [X] Welcome page for neovim, new users running (guide/tutorial) it or simply running it without parameters, equivalentinvim vim-startify
     - [ ] We need a welcome / tutorial / guide function or similar, pointing to a website maybe
-- [ ] Git powerful integration, equivalentinvim vim-fugitive
-    * gitk gui? equivalentinvim gitv
+        - instead, open the youtube video tutorial is a good alternative
 - [X] Syntax checker / validator, equivalentinvim Syntastic
     - [X] We can use LSPs for that
     - other ones are needed or we have enough with LSP? ask @deon
@@ -120,10 +121,10 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [-] location push-pop feature, better if includes visual marks, equivalentinvim vim-kangaroo
 - [-] Show what is going to be replaced with %s/foo/bar while typing, equivalentinvim vim-over
 - [X] Visualize HEX colors and names, equivalentinvim vim-coloresque - included in NvChad
-- [ ] Markdown and Asciidoc support (syntax, syntax checker, etc), also a previewer:
-- [ ] Preview (render) of things like markwon, equivalentinvim vim-preview
-- [ ] Preview https://neovimcraft.com/plugin/iamcco/markdown-preview.nvim/index.html
-- [ ] Show shitty M$ buggy newlines
+- [X] Markdown and Asciidoc support (syntax, syntax checker, etc), also a previewer:
+- [-] Preview (render) of things like markwon, equivalentinvim vim-preview
+- [-] Preview https://neovimcraft.com/plugin/iamcco/markdown-preview.nvim/index.html
+- [X] Show shitty M$ buggy newlines
 - [X] Show syntax hilight names, equivalentinvim synstack
     - we used a specific plugin for the TODOs and similar entries
 - [X] Show and fix whitespacing errors
@@ -132,28 +133,17 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [X] EFL full support & EDC
 - [X] Beacon - cursor jump on change, to see whare it is https://github.com/DanilaMihailov/beacon.nvim
     - switched to a better and faster one
-- [ ] Hilight other similar words than the one in the cursor: https://github.com/RRethy/vim-illuminate
+- [X] Hilight other similar words than the one in the cursor: https://github.com/RRethy/vim-illuminate
     * highlist other names like the one in cursor: https://www.reddit.com/r/neovim/comments/10xf7s0/localhighlightnvim_blazing_fast_highlight_of_word/
 - [X]  matchup: https://github.com/andymass/vim-matchup#features
 - [ ] Improved visuals with Dressing https://github.com/stevearc/dressing.nvim
+* [X] Notifications, wow! https://github.com/rcarriga/nvim-notify
 
 ### CMP
-- [ ] Include a signatures autocompletion if is already not included: https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
+- [X] Include a signatures autocompletion if is already not included: https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
 
 ### Must have ones:
 * Command (vim commands) completion! as in https://github.com/Avimitin/nvim#Gallery
-
-### GIT plugins
-* gitsigns, much better way to visualize our code different than in git, we should always see that:  https://github.com/lewis6991/gitsigns.nvim
-    - or: I think it supports more features like "opening previous state", we should see that, not sure how handy it is
-* https://github.com/jesseduffield/lazygit
-* https://github.com/sindrets/diffview.nvim
-* show differences of added / removed / etc:
-    NOTE: maybe we don't need it on the new framework, seems like we can see them but is not very clear
-    Note: seems like we use this one that has already some good features, we must check them https://github.com/lewis6991/gitsigns.nvim
-        * https://github.com/airblade/vim-gitgutter
-        * https://github.com/mhinz/vim-signify
-
 ### Alternatives:
 * tagbar:
     - https://github.com/simrat39/symbols-outline.nvim
@@ -170,10 +160,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
 * [X] make telescope style bordered, but we need to set a better theme bg for it first
 * [X] pulse cursor when search: https://github.com/inside/vim-search-pulse
 * menu / autocompletion, works with Up and Down keys
-* [ ] move all the plugin's keymaps to their section, so that if the plugin is disabled, its keymaps too, but also to show it correctly in the cheatsheet
-
-### FIX
-- when a text is copied or deleted, it is saved to the clipboard, this is very annoying in normal vim usage because we only want to do that when ctrl+c for example
+* [X] move all the plugin's keymaps to their section, so that if the plugin is disabled, its keymaps too, but also to show it correctly in the cheatsheet
 
 ### Wishlist
 * Trouble - A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing. - https://github.com/folke/trouble.nvim
@@ -181,18 +168,23 @@ _Tip: search for the keyword 'elivim' in the conf files_
 * Rename - it renames varnames or functions correctly in all the code like in 
     - https://github.com/smjonas/inc-rename.nvim
     - which one it uses? maybe let's use this? https://gist.github.com/RaafatTurki/64d89abf326e9fce6eb717f7c1f8a97e
-* Notifications, wow! https://github.com/rcarriga/nvim-notify
 * pastebins: https://github.com/rktjmp/paperplanes.nvim
-* search anything in a cheatsheet https://github.com/sudormrfbin/cheatsheet.nvim
+- [X] search anything in a cheatsheet https://github.com/sudormrfbin/cheatsheet.nvim - Telescope keymaps
 * collaborative editor (easy & fast) ? 
-* git related (fzf) https://github.com/ray-x/forgit.nvim
 * better search and replace for all the project: https://github.com/ray-x/sad.nvim
+    - search/replace between multiple files: https://github.com/nvim-pack/nvim-spectre
 * emoji picker: https://github.com/ziontee113/icon-picker.nvim
-* move easly blocks: https://github.com/matze/vim-move
+- [X] move easly blocks: https://github.com/matze/vim-move
 * macro manager: https://github.com/ecthelionvi/NeoComposer.nvim
-* regexplainer https://github.com/bennypowers/nvim-regexplainer
-* search/replace between multiple files: https://github.com/nvim-pack/nvim-spectre
+- [X] regexplainer https://github.com/bennypowers/nvim-regexplainer
 * MUCH MORE: https://github.com/rockerBOO/awesome-neovim
+
+### GIT features
+- [ ] git complete suite ? https://github.com/ray-x/forgit.nvim
+- [ ] Git powerful integration, equivalentinvim vim-fugitive
+    * gitk gui? equivalentinvim gitv
+* Git searchigns https://github.com/aaronhallaert/advanced-git-search.nvim
+- [ ] implement "delta" in the OS for diff features
 
 ### Voice commands
 Using Vim from voice can be amazing and it helps knowing how to use it, see this demo: https://youtu.be/TEBMlXRjhZY , maybe we can use a plugin like:
@@ -202,6 +194,7 @@ Using Vim from voice can be amazing and it helps knowing how to use it, see this
 - https://www.lazyvim.org/keymaps
 - https://github.com/ecosse3/nvim  - comment from https://www.reddit.com/r/neovim/comments/135zudx/what_neovim_configuration_is_this/
 - https://github.com/nvim-lua/kickstart.nvim
+- https://github.com/ray-x/nvim
 
 ### Research
 - WOW big setup, try and see: https://github.com/ray-x/nvim
@@ -234,7 +227,6 @@ Code actions (using Telescope)
     + https://github.com/jay-babu/mason-nvim-dap.nvim
     + https://github.com/rcarriga/nvim-dap-ui
     + https://github.com/theHamsta/nvim-dap-virtual-text
-* Git searchigns https://github.com/aaronhallaert/advanced-git-search.nvim
 
 ### Ideas:
 * Use F5 for reloading the editor and its confs?
