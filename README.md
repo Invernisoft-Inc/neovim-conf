@@ -60,6 +60,10 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [X] in autocomplete, if there's a snippet and we want to autocommplete the word the cannot trigger it unless the menu is open, this can be annoying, so we may need to reconfigure the <c-j> key to if expandable... else fallback()
 - [X] when a text is copied or deleted, it is saved to the clipboard, this is very annoying in normal vim usage because we only want to do that when ctrl+c for example
 - [ ] Bash: only LSP to files that has /bin/bash, similar to the "env" conf but only for bash, this avoids source files to be LSPized like mkdeb controls
+- [ ] editing C files (efl) shows too many errors, I assume LSP is not well configured, try other frameworks first to see if by default they works better (especially: spacevim & lunarvim )
+- [ ] bashls LSP is running on markdown files? (my todo list)
+- [ ] cmp poping up all the time makes the editor slow, but also the autocompleter lags a lot when other processes are using the cpu, switch to supertab and leave cmp not poping up by default? (maybe not for normal users, so maybe add a custom setting for this)
+- [ ] betatest strong cpu usage while using neovim and also compare with nvim, to see which plugins make it slow
 
 ### Bugs (possible) to check:
 - [ ] fonts compatibility? over terminology, urxvt, ssh, tmux, etc
@@ -180,7 +184,8 @@ _Tip: search for the keyword 'elivim' in the conf files_
 * MUCH MORE: https://github.com/rockerBOO/awesome-neovim
 
 ### GIT features
-- [ ] git complete suite ? https://github.com/ray-x/forgit.nvim
+NOTE: try an entire framework in vbox (booksworm?) in order to try forgit?
+- [ ] git complete suite ? https://github.com/ray-x/forgit.nvim -- <!-- # NOTE: it is a WIP -->
 - [ ] Git powerful integration, equivalentinvim vim-fugitive
     * gitk gui? equivalentinvim gitv
 * Git searchigns https://github.com/aaronhallaert/advanced-git-search.nvim
