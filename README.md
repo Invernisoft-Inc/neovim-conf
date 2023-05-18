@@ -47,6 +47,12 @@ _Tip: search for the keyword 'elivim' in the conf files_
     - also show :Copilot status   in the notification window
 - Important, be updated from this needed WIP feature: https://githubnext.com/projects/copilot-view/
 - [ ] A hotkey to close "all" opened windows (quickfix, tagbar, etc...) in one shot (or use Space+x ?)
+- [ ] cmdline mode put in in red, since insert is in green
+- [ ] cmp alternative:
+    - since its slow and annoying, do not use it
+    - use supertab instead, which does more what we want / need
+    - trigger cmp only when "c-n" is pressed (or see the options from lazyvim)
+    - do we should set this by default? so the user will never have the cmp popup? mmh better from a custom conf
 
 
 ### BUGS:
@@ -61,9 +67,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [X] when a text is copied or deleted, it is saved to the clipboard, this is very annoying in normal vim usage because we only want to do that when ctrl+c for example
 - [ ] Bash: only LSP to files that has /bin/bash, similar to the "env" conf but only for bash, this avoids source files to be LSPized like mkdeb controls
 - [ ] editing C files (efl) shows too many errors, I assume LSP is not well configured, try other frameworks first to see if by default they works better (especially: spacevim & lunarvim )
-- [ ] bashls LSP is running on markdown files? (my todo list)
 - [ ] cmp poping up all the time makes the editor slow, but also the autocompleter lags a lot when other processes are using the cpu, switch to supertab and leave cmp not poping up by default? (maybe not for normal users, so maybe add a custom setting for this)
-- [ ] betatest strong cpu usage while using neovim and also compare with nvim, to see which plugins make it slow
 
 ### Bugs (possible) to check:
 - [ ] fonts compatibility? over terminology, urxvt, ssh, tmux, etc
@@ -78,11 +82,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
     * equivalentinvim pangloss/vim-javascript ?
 - [X] Error reporting
     - with the notification plugin and similar features
-- [ ] Snippets:
-   - [ ] comp-nvim-lsp : https://youtu.be/h4g0m0Iwmys?t=256
-   - equivalentinvim: ultisnips, with own snippets for codes and mapping of locations with predefined values
-   - UltiSnips integration: https://github.com/quangnguyen30192/cmp-nvim-ultisnips
-   - converter: https://github.com/smjonas/snippet-converter.nvim
+- [X] Snippets:
 - [X] Copilot.~~vim~~lua
 - [X] Copilot cmp: https://github.com/zbirenbaum/copilot-cmp
     - Alternative! TABNINE! wtf seems better: https://www.tabnine.com/ - https://github.com/tzachar/cmp-tabnine
@@ -110,20 +110,20 @@ _Tip: search for the keyword 'elivim' in the conf files_
     * realtime, fuzzy-finder required, see ",fu" in elive-vim
 - [X] Show the definition prototype (like C headers) while typing, equivalentinvim echofunc
 - [X] Welcome page for neovim, new users running (guide/tutorial) it or simply running it without parameters, equivalentinvim vim-startify
-    - [ ] We need a welcome / tutorial / guide function or similar, pointing to a website maybe
-        - instead, open the youtube video tutorial is a good alternative
+- [ ] We need a welcome / tutorial / guide function or similar, pointing to a website maybe
+    - instead, open the youtube video tutorial is a good alternative
 - [X] Syntax checker / validator, equivalentinvim Syntastic
-    - [X] We can use LSPs for that
+    - We can use LSPs for that?
+    - [ ] Implement syntastic, is not enough
     - other ones are needed or we have enough with LSP? ask @deon
 - [X] Comment / uncomment blocks, already included in NvChad? equivalentinvim nerdcommenter
 - [X] Blink when search, equivalentinvim 'git://github.com/Elive/vim-bling'
-- [X] EFL integration, equivalentinvim 'git://git.enlightenment.org/editors/vim-configs.git'
 - [-] Multiple cursors edition, equivalentinvim vim-multiple-cursors
 - [ ] Extra textblock and textobjs definitions?
 - [-] Undo Tree feature (multiple undo histories), equivalentinvim undotree - update: not needed / never used
 - [X] powerline like bar, equivalentinvim vim-airline, NvChad has it?
 - [-] location push-pop feature, better if includes visual marks, equivalentinvim vim-kangaroo
-- [-] Show what is going to be replaced with %s/foo/bar while typing, equivalentinvim vim-over
+- [X] Show what is going to be replaced with %s/foo/bar while typing, equivalentinvim vim-over
 - [X] Visualize HEX colors and names, equivalentinvim vim-coloresque - included in NvChad
 - [X] Markdown and Asciidoc support (syntax, syntax checker, etc), also a previewer:
 - [-] Preview (render) of things like markwon, equivalentinvim vim-preview
@@ -133,18 +133,19 @@ _Tip: search for the keyword 'elivim' in the conf files_
     - we used a specific plugin for the TODOs and similar entries
 - [X] Show and fix whitespacing errors
 - [X] Feature to "sudo save" file when no permissions
-- [X] Show the cursor cuc & cul when switching windows
-- [X] EFL full support & EDC
+- [-] Show the cursor cuc & cul when switching windows, not needed with the candies included
+- [X] EFL & EDC integration, equivalentinvim 'git://git.enlightenment.org/editors/vim-configs.git'
 - [X] Beacon - cursor jump on change, to see whare it is https://github.com/DanilaMihailov/beacon.nvim
     - switched to a better and faster one
 - [X] Hilight other similar words than the one in the cursor: https://github.com/RRethy/vim-illuminate
     * highlist other names like the one in cursor: https://www.reddit.com/r/neovim/comments/10xf7s0/localhighlightnvim_blazing_fast_highlight_of_word/
-- [X]  matchup: https://github.com/andymass/vim-matchup#features
+- [X] matchup: https://github.com/andymass/vim-matchup#features
 - [ ] Improved visuals with Dressing https://github.com/stevearc/dressing.nvim
 * [X] Notifications, wow! https://github.com/rcarriga/nvim-notify
 
 ### CMP
 - [X] Include a signatures autocompletion if is already not included: https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
+- [ ] implement ctags: https://github.com/quangnguyen30192/cmp-nvim-tags
 
 ### Must have ones:
 * Command (vim commands) completion! as in https://github.com/Avimitin/nvim#Gallery
@@ -156,7 +157,6 @@ _Tip: search for the keyword 'elivim' in the conf files_
 
 ### TODO confs to add:
 * [X] Tabufline: have the Tabs opened by default in colapsed mode so that the feature can be seen and used (try: :tabnew )
-    - use Ctrl + t now
 * [X] relative numbers in auto mode: https://github.com/nkakouros-original/numbers.nvim
 * "surround" actions, similar to pressing ""
     - tpope/vim-surround works, but not the hotkey, no idea why, search another plugin for surround actions?
@@ -167,8 +167,8 @@ _Tip: search for the keyword 'elivim' in the conf files_
 * [X] move all the plugin's keymaps to their section, so that if the plugin is disabled, its keymaps too, but also to show it correctly in the cheatsheet
 
 ### Wishlist
-* Trouble - A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing. - https://github.com/folke/trouble.nvim
-* Hover - a plugin that shows things when you mouse-over words: https://github.com/lewis6991/hover.nvim
+* [X] Trouble - A pretty list for showing diagnostics, references, telescope results, quickfix and location lists to help you solve all the trouble your code is causing. - https://github.com/folke/trouble.nvim
+* [X] Hover - a plugin that shows things when you mouse-over words: https://github.com/lewis6991/hover.nvim
 * Rename - it renames varnames or functions correctly in all the code like in 
     - https://github.com/smjonas/inc-rename.nvim
     - which one it uses? maybe let's use this? https://gist.github.com/RaafatTurki/64d89abf326e9fce6eb717f7c1f8a97e
@@ -196,13 +196,13 @@ Using Vim from voice can be amazing and it helps knowing how to use it, see this
 - [ ] https://github.com/eyalk11/nvim-voicerec - + give a comment on the reddit guy: https://www.reddit.com/r/neovim/comments/132c36x/nvimvoicerec_add_speechtotext_to_neovim_useful/
 
 ### Other Frameworks to try:
-- https://www.lazyvim.org/keymaps
-- https://github.com/ecosse3/nvim  - comment from https://www.reddit.com/r/neovim/comments/135zudx/what_neovim_configuration_is_this/
-- https://github.com/nvim-lua/kickstart.nvim
-- https://github.com/ray-x/nvim
+- [X] https://www.lazyvim.org/keymaps  <--- OMG amazing one
+- [X] https://github.com/ecosse3/nvim  - comment from https://www.reddit.com/r/neovim/comments/135zudx/what_neovim_configuration_is_this/
+- [X] https://github.com/nvim-lua/kickstart.nvim
+- [X] https://github.com/ray-x/nvim  <-- full of plugins but meh
+- [ ] https://github.com/rockerBOO/awesome-neovim#preconfigured-configuration
 
 ### Research
-- WOW big setup, try and see: https://github.com/ray-x/nvim
 * https://dev.to/iggredible/what-is-inside-my-vimrc-3ob7
 
 ### web dev
@@ -258,6 +258,8 @@ Code actions (using Telescope)
 - [ ] Make a RetroWave theme too which can look really cool? (wip)
     - https://vscodethemes.com/e/maxenceblanc.sia-synthwave/sia-synthwave-colour-theme?language=javascript
     - https://vscodethemes.com/e/nexxai.material-synthwave-vscode/material-synthwave?language=javascript
+    - W00t: https://github.com/maxmx03/fluoromachine.nvim
+        - nice, we can port mostly this one with minor changes / minor color gets from other themes
 - [ ] Hacker colorscheme based on common "cyan" values like on this piece of video (take the colorscheme from it, include red & green as in the movies): https://youtu.be/-uleG_Vecis?t=581
 - [ ] Include other selections?
 - https://github.com/metalelf0/jellybeans-nvim
@@ -288,5 +290,13 @@ Code actions (using Telescope)
 * nvim lua guide https://github.com/RicardoRien/nvim-lua-guide/blob/master/README.esp.md
 * Vim Regex (and other nices articles) https://dev.to/iggredible/learning-vim-regex-26ep
 * Some LSP codes introduction: https://www.youtube.com/watch?v=stqUbv-5u2s
+* Profiling / benchmark plugins usage: https://stackoverflow.com/questions/10137304/how-can-i-find-which-vim-plugin-is-guilty-for-overloading-my-cpu
 
+
+### Notes & future things:
+- [ ] nerdfonts obsoletes can be detected using this tool: https://github.com/loichyan/nerdfix
+- [ ] implement ultisnips snippets
+   - equivalentinvim: ultisnips, with own snippets for codes and mapping of locations with predefined values
+   - UltiSnips integration: https://github.com/quangnguyen30192/cmp-nvim-ultisnips
+   - converter: https://github.com/smjonas/snippet-converter.nvim
 
