@@ -42,6 +42,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
     let g:copilot_no_tab_map = v:true
 
 - [ ] Wow ChatGPT full featured plugin: https://github.com/jackMort/ChatGPT.nvim
+- [ ] alternative: https://github.com/Bryley/neoai.nvim
 
 - Add a toggle of autosuggestions: :lua  require("copilot.suggestion").toggle_auto_trigger()
     - also show :Copilot status   in the notification window
@@ -114,7 +115,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
     - instead, open the youtube video tutorial is a good alternative
 - [X] Syntax checker / validator, equivalentinvim Syntastic
     - We can use LSPs for that?
-    - [ ] Implement syntastic, is not enough
+    - [X] Implement syntastic, is not enough
     - other ones are needed or we have enough with LSP? ask @deon
 - [X] Comment / uncomment blocks, already included in NvChad? equivalentinvim nerdcommenter
 - [X] Blink when search, equivalentinvim 'git://github.com/Elive/vim-bling'
@@ -210,7 +211,6 @@ Using Vim from voice can be amazing and it helps knowing how to use it, see this
 
 ### LSP related Wishlist
 - keymaps, ideas, plugins, etc: https://www.lazyvim.org/keymaps#lsp
-- note: we used syntastic, which I think is not needed with lsp?
 * https://github.com/ray-x/navigator.lua
 * https://github.com/ray-x/lsp_signature.nvim
 * installer: https://github.com/williamboman/nvim-lsp-installer
@@ -260,6 +260,7 @@ Code actions (using Telescope)
     - https://vscodethemes.com/e/nexxai.material-synthwave-vscode/material-synthwave?language=javascript
     - W00t: https://github.com/maxmx03/fluoromachine.nvim
         - nice, we can port mostly this one with minor changes / minor color gets from other themes
+    - terminal ideas: https://github.com/KadoBOT/80s-retrowave
 - [ ] Hacker colorscheme based on common "cyan" values like on this piece of video (take the colorscheme from it, include red & green as in the movies): https://youtu.be/-uleG_Vecis?t=581
 - [ ] Include other selections?
 - https://github.com/metalelf0/jellybeans-nvim
