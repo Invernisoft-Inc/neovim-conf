@@ -144,6 +144,16 @@ _Tip: search for the keyword 'elivim' in the conf files_
 - [ ] Improved visuals with Dressing https://github.com/stevearc/dressing.nvim
 * [X] Notifications, wow! https://github.com/rcarriga/nvim-notify
 
+### Research / To try
+* https://dev.to/iggredible/what-is-inside-my-vimrc-3ob7
+* https://github.com/dense-analysis/ale
+* https://github.com/Robitx/gp.nvim?tab=readme-ov-file  compare with ChatGPT plugin
+* Copilot alternatives:
+    * https://github.com/Exafunction/codeium.nvim
+    * https://github.com/dense-analysis/neural
+    * https://github.com/zhenyangze/vim-bitoai  - https://docs.bito.ai/getting-started/vim-neovim-plugin
+    * local ollama (requires powerful local resources machine to run) https://www.youtube.com/watch?v=7YPufxIMdJo
+
 ### CMP
 - [X] Include a signatures autocompletion if is already not included: https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
 - [ ] implement ctags: https://github.com/quangnguyen30192/cmp-nvim-tags
@@ -174,7 +184,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
     - https://github.com/smjonas/inc-rename.nvim
     - which one it uses? maybe let's use this? https://gist.github.com/RaafatTurki/64d89abf326e9fce6eb717f7c1f8a97e
 * pastebins: https://github.com/rktjmp/paperplanes.nvim
-- [X] search anything in a cheatsheet https://github.com/sudormrfbin/cheatsheet.nvim - Telescope keymaps
+- [ ] search anything in a cheatsheet https://github.com/sudormrfbin/cheatsheet.nvim - Telescope keymaps
 * collaborative editor (easy & fast) ? 
 * better search and replace for all the project: https://github.com/ray-x/sad.nvim
     - search/replace between multiple files: https://github.com/nvim-pack/nvim-spectre
@@ -203,8 +213,6 @@ Using Vim from voice can be amazing and it helps knowing how to use it, see this
 - [X] https://github.com/ray-x/nvim  <-- full of plugins but meh
 - [ ] https://github.com/rockerBOO/awesome-neovim#preconfigured-configuration
 
-### Research
-* https://dev.to/iggredible/what-is-inside-my-vimrc-3ob7
 
 ### web dev
 - https://github.com/ray-x/web-tools.nvim
