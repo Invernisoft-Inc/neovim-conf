@@ -85,8 +85,6 @@ _Tip: search for the keyword 'elivim' in the conf files_
     - with the notification plugin and similar features
 - [X] Snippets:
 - [X] Copilot.~~vim~~lua
-- [X] Copilot cmp: https://github.com/zbirenbaum/copilot-cmp
-    - Alternative! TABNINE! wtf seems better: https://www.tabnine.com/ - https://github.com/tzachar/cmp-tabnine
 - [X] Execute-on-save: this is a pretty need thing, research a plugin that triggers a user specified action when its saved
     - use this one https://github.com/stevearc/overseer.nvim
 - [ ] Autocomplete: equivalentinvim: supertab, neocomplcache, youcompleteme
@@ -149,10 +147,17 @@ _Tip: search for the keyword 'elivim' in the conf files_
 * https://github.com/dense-analysis/ale
 * https://github.com/Robitx/gp.nvim?tab=readme-ov-file  compare with ChatGPT plugin
 * Copilot alternatives:
+    - TABNINE: https://www.tabnine.com/ - https://github.com/tzachar/cmp-tabnine
+        -- not automcompletion like copilot, and seems like the quality code depends on the paying service (not with the free option)
     * https://github.com/Exafunction/codeium.nvim
+        - much lower quality code than copilot, "ghost text" (like copilot suggestions) are only viewable but requires / relies on cmp entirely
     * https://github.com/dense-analysis/neural
     * https://github.com/zhenyangze/vim-bitoai  - https://docs.bito.ai/getting-started/vim-neovim-plugin
-    * local ollama (requires powerful local resources machine to run) https://www.youtube.com/watch?v=7YPufxIMdJo
+    * parrot with multiple providers: https://github.com/frankroeder/parrot.nvim
+    - local options:
+        * parrot with multiple providers: https://github.com/frankroeder/parrot.nvim
+        * local ollama (requires powerful local resources machine to run) https://www.youtube.com/watch?v=7YPufxIMdJo
+        - copilot alternative local (requires strong gpu): https://github.com/fauxpilot/fauxpilot
 
 ### CMP
 - [X] Include a signatures autocompletion if is already not included: https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
