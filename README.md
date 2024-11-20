@@ -147,6 +147,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
 * https://github.com/dense-analysis/ale
 * https://github.com/Robitx/gp.nvim?tab=readme-ov-file  compare with ChatGPT plugin
 * Copilot alternatives:
+    - SuperMaven: 3x times high quality Copilot alternative:  https://github.com/supermaven-inc/supermaven-nvim  - https://supermaven.com/
     - TABNINE: https://www.tabnine.com/ - https://github.com/tzachar/cmp-tabnine
         -- not automcompletion like copilot, and seems like the quality code depends on the paying service (not with the free option)
     * https://github.com/Exafunction/codeium.nvim
@@ -158,6 +159,8 @@ _Tip: search for the keyword 'elivim' in the conf files_
         * parrot with multiple providers: https://github.com/frankroeder/parrot.nvim
         * local ollama (requires powerful local resources machine to run) https://www.youtube.com/watch?v=7YPufxIMdJo
         - copilot alternative local (requires strong gpu): https://github.com/fauxpilot/fauxpilot
+    - avante, cursor-like
+    - codecompanion: https://github.com/olimorris/codecompanion.nvim
 
 ### CMP
 - [X] Include a signatures autocompletion if is already not included: https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
@@ -279,6 +282,10 @@ Code actions (using Telescope)
 - https://github.com/metalelf0/jellybeans-nvim
 - use the grays values like https://github.com/Avimitin/nvim/blob/master/docs/images/kanagawa.png
 - try to create a colorscheme with only the terminal colors modified to match our terminal colors (alt + i, run "colores" )
+- Amazing, make this one: https://www.youtube.com/watch?v=YALpX8oOn78 - I asked in the comment which colorscheme is, otherwise i will need to do it manually
+- Sequoia (moonlight & night), they are amazing: https://vscodethemes.com/e/wicked-labs.sequoia/sequoia-monochrome?language=javascript
+    - get from:  https://github.com/Sequoia-Theme/vs-code
+    - neovim version? https://github.com/Hiroya-W/dotfiles-sequoia-moonlight - note: includes many colorschemes
 
 ### Tutorials
 - [ ] https://github.com/tjdevries/train.nvim
@@ -314,3 +321,17 @@ Code actions (using Telescope)
    - UltiSnips integration: https://github.com/quangnguyen30192/cmp-nvim-ultisnips
    - converter: https://github.com/smjonas/snippet-converter.nvim
 
+
+## AI tools / models / plugins: researching...
+
+### Developments Orchestrators
+* [Maestro](https://github.com/Doriandarko/maestro)
+* [OpenDevin](https://github.com/OpenDevin/OpenDevin) a tool to build any software by itself
+* [DevOn](https://github.com/entropy-research/Devon)
+* [SWE](https://github.com/princeton-nlp/SWE-agent)
+* [devika](https://github.com/stitionai/devika)
+
+### Human / Computer interfaces:
+* [pieces](https://pieces.app/)
+
+### Web scrapping / filler
