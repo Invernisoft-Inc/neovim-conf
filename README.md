@@ -77,6 +77,7 @@ _Tip: search for the keyword 'elivim' in the conf files_
     - set a hotkey to remove all visuals (linenumbers, tabs, etc) and to re-enable them
 
 #### Plugins
+- [ ] Menu https://github.com/nvzone/menu
 - [X] PHP & Javascript good support
     * make sure to include the best support for "php and JavaScript, mostly VueJS"
     * equivalentinvim spf13/PIV ?
